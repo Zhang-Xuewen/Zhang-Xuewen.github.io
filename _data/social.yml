@@ -1,23 +1,23 @@
 email:
-  id: 'xiaozhou.yang@u.nus.edu'
+  id: 'xuewen001@e.ntu.edu.sg'
   href: 'mailto:'
   title: 'Email'
   fa-icon: 'fa fa-envelope'
 
 linkedin:
-  id: 'yangxiaozhou'
+  id: 'xuewen-zhang-b98917242'
   href: 'https://www.linkedin.com/in/'
   title: 'Linkedin'
   fa-icon: 'fab fa-linkedin'
 
 github:
-  id: 'YangXiaozhou'
+  id: 'QiYuan-Zhang'
   href: 'https://github.com/'
   title: 'GitHub'
   fa-icon: 'fab fa-github'
 
 youtube:
-  id: 'a315345751'
-  href: 'https://www.youtube.com/user/'
-  title: YouTube
+  id: '382344440'
+  href: 'https://space.bilibili.com/'
+  title: 'Bilibili'
   fa-icon: 'fab fa-youtube'
