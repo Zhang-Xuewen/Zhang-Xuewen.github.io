@@ -14,14 +14,14 @@ highlighter:      rouge
 # permalink:        pretty
 
 # Setup
-title:            "Xiaozhou's Notes"
+title:            "QiYuan's Web"
 tagline:          ''
 description:      ''
-url:              https://yangxiaozhou.github.io
+url:              https://qiyuan-zhang.github.io
 baseurl:          ''
 
 author:
-  name:           'Yang Xiaozhou'
+  name:           'QiYuan Zhang'
 
 paginate:         10
 paginate_path:    "/blog/page:num/"
@@ -30,7 +30,7 @@ paginate_path:    "/blog/page:num/"
 # version:          2.1.0
 
 github:           
-  repo:           https://github.com/yangxiaozhou/yangxiaozhou.github.io
+  repo:           https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io
 
 plugins: 
   - jekyll-paginate
@@ -38,4 +38,4 @@ plugins:
   - jekyll-commonmark-ghpages
 
 disqus:
-  shortname: yangxiaozhou
+  shortname: qiyuan
