@@ -2,6 +2,10 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1>
+        <link rel="selfie" width="400" href="{{ '/' | relative_url }}home/selfie.jpg">
+      </h1>
+      <div style="height: 20px;"></div>     <!--add blank row -->
+      <h1>
         <!-- <a href="{{ '/' | relative_url }}">        </a> -->
           {{ site.title }}
       </h1>
@@ -36,9 +40,6 @@
         {% endif %}
       {% endfor %} -->
 
-      
-      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a> -->
-      <!-- <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
       {% include social_links.html %}
 
     </nav>
