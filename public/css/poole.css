@@ -83,8 +83,9 @@ a:focus {
   /*background-color: gold*/
 }
 
-/* Headings */
+/* ______Headings______ */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'East Sea Dokdo', cursive;
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
@@ -107,7 +108,7 @@ h4, h5, h6 {
   font-size: 1rem;
 }
 
-/* Body text */
+/* ______Body text______ */
 p {
   margin-top: 0;
   margin-bottom: 1rem;
