@@ -348,6 +348,18 @@ tbody tr:nth-child(odd) th {
   margin-top: 0;
 }
 
+
+.page-title-new,
+.post-title-new,
+.post-title-new a {
+  color: #303030;
+  font-family: 'East Sea Dokdo', cursive;
+}
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
 /* Meta data line below post title */
 .post-date {
   display: block;
