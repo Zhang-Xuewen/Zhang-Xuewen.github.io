@@ -19,6 +19,13 @@ github:
   fa-icon: 'fab fa-github'
   path: 'https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/60ba4685-833e-49da-89f4-2fcb21112316'
 
+google-scholar:
+  id: 'VDS2k4oAAAAJ&hl=en&oi=ao'
+  href: 'https://scholar.google.com/citations?user='
+  title: 'Google-Scholar'
+  fa-icon: 'fab fa-google-scholar'
+  path: 'https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/e4111a3d-b732-4e26-8391-f5e54c6503ed'
+
 bilibili:
   id: '382344440'
   href: 'https://space.bilibili.com/'
