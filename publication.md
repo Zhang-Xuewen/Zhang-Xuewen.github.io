@@ -3,10 +3,13 @@ layout: page
 title: Publication
 permalink: /publication/
 ---
-<style> body {font-family: 'East Sea Dokdo', cursive;} </style>
+<style> 
+body {font-family: 'East Sea Dokdo', cursive;
+      font-size: 40px;s} 
+</style>
 
 
-Google [Scholar](https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao)
+[Google Scholar](https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao)
 
 
 <h1> Selected publications </h1>
