@@ -21,11 +21,11 @@ bilibili:
   href: 'https://space.bilibili.com/'
   title: 'Bilibili'
   fa-icon: 'fab fa-github'
-  path: "{{ '/' | relative_url }}home/bilibili.svg"
+  path: "{{ '/' | relative_url }}home/bilibili.png"
 
 unsplash:
   id: '@qiyuan_'
   href: 'https://unsplash.com/'
   title: 'Unsplash'
   fa-icon: 'fab fa-github'
-  path: "{{ '/' | relative_url }}home/unsplash.svg"
+  path: "{{ '/' | relative_url }}home/unsplash.png"
