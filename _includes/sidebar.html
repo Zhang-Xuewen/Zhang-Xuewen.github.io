@@ -1,6 +1,7 @@
 <!-- Set default sidebar adopted from public/css/hyde.css -->
 <div class="sidebar">
-  <div class="container sidebar-sticky">
+  <div class="container sidebar-sticky">                 <!-- sidebar config -->
+
     <div class="sidebar-about">                          <!-- config of the sidebar in hyde.css -->
 
       {% if page.url == '/' %}                           <!-- Home page put selfie -->
@@ -26,7 +27,7 @@
     </div>
 
 
-    <nav class="sidebar-nav-new">                              <!-- config of the sidebar in hyde.css -->
+    <nav class="sidebar-nav-new">                              <!--导航设置 config of the sidebar in hyde.css -->
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
 
       <!-- Manual set order -->
