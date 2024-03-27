@@ -91,9 +91,9 @@ html {
 
 .sidebar-nav-new {
   color: #fff;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0;
   font-family: 'East Sea Dokdo', cursive;
-  font-size: 1.8rem;
+  font-size: 40px;
 }
 
 .sidebar-nav-item {
