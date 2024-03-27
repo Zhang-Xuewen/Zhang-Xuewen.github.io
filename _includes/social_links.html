@@ -4,7 +4,11 @@
     {% for entry in sm %}
         {% assign key = entry[0] %}
         {% if sm[key].id %}
-            <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><i class="{{ sm[key].fa-icon }}"></i></a>
+            {% if key == 'bilibili' or key == 'unsplash' %}
+                <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><img src="{{ sm[key].path }}" alt="{{sm[key].title}}"></a>
+            {% else %}
+                <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><i class="{{ sm[key].fa-icon }}"></i></a>
+            {% endif %}
         {% endif %}
     {% endfor %}
 </div>

@@ -16,7 +16,7 @@ highlighter:      rouge
 # Setup
 title:            "QiYuan's Web"
 tagline:          ''
-description:      'A place to share'
+description:      ''
 url:              https://qiyuan-zhang.github.io
 baseurl:          ''
 
