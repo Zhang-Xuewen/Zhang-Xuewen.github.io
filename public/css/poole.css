@@ -354,9 +354,10 @@ tbody tr:nth-child(odd) th {
 .post-title-new a {
   color: #303030;
   font-family: 'East Sea Dokdo', cursive;
+  font-size: 60px;
 }
-.page-title,
-.post-title {
+.page-title-new,
+.post-title-new {
   margin-top: 0;
 }
 
