@@ -99,7 +99,7 @@ html {
 .sidebar-nav-item {
   margin-bottom: 0.5rem;
   display: block;
-  line-height: 1.75;
+  line-height: 1;
 }
 a.sidebar-nav-item {
   color: #fff;
