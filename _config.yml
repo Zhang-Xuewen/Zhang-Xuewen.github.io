@@ -18,7 +18,7 @@ title:            "QiYuan's Web"
 tagline:          ''
 description:      ''
 url:              https://qiyuan-zhang.github.io
-baseurl:          ''
+baseurl:          'https://qiyuan-zhang.github.io'
 
 author:
   name:           'QiYuan Zhang'
