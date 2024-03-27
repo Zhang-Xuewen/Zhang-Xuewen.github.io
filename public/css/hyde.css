@@ -76,8 +76,8 @@ html {
   color: #fff;
 }
 
-/* About section */
-.sidebar-about h1 {
+/* Title section */
+.sidebar-title h1 {
   color: #fff;
   margin-top: 0;
   font-family: 'East Sea Dokdo', cursive;
@@ -97,6 +97,7 @@ html {
 }
 
 .sidebar-nav-item {
+  margin-bottom: 0.5rem;
   display: block;
   line-height: 1.75;
 }
