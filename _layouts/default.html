@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!-- Web page default template-->
+<!DOCTYPE html>                <!-- define the document type and version of HTML being used -->
+<html lang="en-us">            <!-- specifies the language of the content -->
 
-{% include head.html %}
-{% include google_analytics.html %}
+{% include head.html %}                    <!-- include file -->
+{% include google_analytics.html %}        <!-- include file -->
 
-
+  <!-- beginning of the body structure of the html -->
   <body>
 
-    {% include sidebar.html %}
+    {% include sidebar.html %}         <!-- include file, build the sidebar -->
 
-    <div class="content container">
+    <div class="content container">    <!-- main content of the page-->
       {{ content }}
     </div>
 
   </body>
+
 </html>

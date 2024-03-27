@@ -10,7 +10,8 @@
  *                \/__/
  *
  * Designed, built, and released under MIT license by @mdo. Learn more at
- * https://github.com/poole/hyde.
+ * https://github.com/poole/hyde
+ * Styling rules of the theme.
  */
 
 
@@ -26,7 +27,7 @@
 
 
 /*
- * Global resets
+ * __________Global resets__________
  *
  * Update the foundational and global aspects of the page.
  */
@@ -47,7 +48,7 @@ html {
 
 
 /*
- * Sidebar
+ * __________Sidebar__________
  *
  * Flexible banner for housing site name, intro, and "footer" content. Starts
  * out above content in mobile and later moves to the side with wider viewports.
@@ -87,6 +88,14 @@ html {
 .sidebar-nav {
   margin-bottom: 1rem;
 }
+
+.sidebar-nav-new {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 20px
+}
+
 .sidebar-nav-item {
   display: block;
   line-height: 1.75;
@@ -131,7 +140,9 @@ a.sidebar-nav-item:active {
   text-decoration-color: gold;
 }
 
-/* Sticky sidebar
+
+
+/* _______Sticky sidebar_______
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
  * contents to the bottom of the sidebar in tablets and up.
@@ -147,7 +158,9 @@ a.sidebar-nav-item:active {
 }
 
 
-/* Container
+
+
+/* _______Container_______
  *
  * Align the contents of the site above the proper threshold with some margin-fu
  * with a 25%-wide `.sidebar`.
@@ -174,8 +187,10 @@ a.sidebar-nav-item:active {
 }
 
 
+
+
 /*
- * Reverse layout
+ * _______Reverse layout_______
  *
  * Flip the orientation of the page by placing the `.sidebar` on the right.
  */
@@ -201,7 +216,7 @@ a.sidebar-nav-item:active {
 
 
 /*
- * Themes
+ * _______Themes_______
  *
  * As of v1.1, Hyde includes optional themes to color the sidebar and links
  * within blog posts. To use, add the class of your choosing to the `body`.
