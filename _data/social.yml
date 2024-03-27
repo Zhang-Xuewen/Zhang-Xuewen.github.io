@@ -20,10 +20,10 @@ bilibili:
   id: '382344440'
   href: 'https://space.bilibili.com/'
   title: 'Bilibili'
-  fa-icon: 'fa-brands fa-bilibili'
+  fa-icon: 'fab fa-bilibili'
 
 unsplash:
   id: '@qiyuan_'
   href: 'https://unsplash.com/'
   title: 'Unsplash'
-  fa-icon: 'fa-brands fa-unsplash'
+  fa-icon: 'fab fa-unsplash'
