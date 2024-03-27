@@ -10,8 +10,8 @@ body {font-family: 'East Sea Dokdo', cursive;
 </style>
 
 <div style="display: inline-block;">
-    <img src="https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/75da1264-63b5-44ac-83db-a12fe8836300" width="20">
-</div> [Google Scholar](https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao)
+    <img src="https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/75da1264-63b5-44ac-83db-a12fe8836300" width="20">  <a href="https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao">Google Scholar</a>
+</div> 
 
 
 
