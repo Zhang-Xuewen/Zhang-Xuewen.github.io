@@ -23,6 +23,8 @@
  * Container
  * Reverse layout
  * Themes
+ * Icon setting
+ * Copyright setting
  */
 
 
@@ -299,7 +301,7 @@ a.sidebar-nav-item:active {
 
 
 
-/*Icon Setting*/
+/*________Icon Setting________*/
 .fa-envelope:hover {
   color: gold;
 }
@@ -311,4 +313,10 @@ a.sidebar-nav-item:active {
 }
 .fa-youtube:hover {
   color: gold;
+}
+
+
+/*________Copy right Setting________*/
+p.copyright {
+font_size: 20px;
 }
