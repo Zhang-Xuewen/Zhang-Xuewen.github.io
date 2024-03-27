@@ -5,7 +5,8 @@ permalink: /publication/
 ---
 <style>
 body {font-family: 'East Sea Dokdo', cursive;
-      font-size: 30px;s}
+      font-size: 30px;
+      margin-bottom:4px;}
 </style>
 
 [Google Scholar](https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao)
