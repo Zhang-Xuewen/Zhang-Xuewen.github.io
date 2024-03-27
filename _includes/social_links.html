@@ -1,14 +1,17 @@
 {% if site.data.social %}
-<div id="social-media" style="display: flex; justify-content: flex-end; align-items: flex-end;">
+<div id="social-media" style="display: flex; justify-content: flex-end;">
     {% assign sm = site.data.social %}
     {% for entry in sm %}
         {% assign key = entry[0] %}
         {% if sm[key].id %}
+            <!--
             {% if key == 'bilibili' or key == 'unsplash' %}
                 <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><img src="{{ sm[key].path }}" width="18" style="margin-right: 2px;"></a>
             {% else %}
                 <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><i class="{{ sm[key].fa-icon }}" style="margin-right: 2px;"></i></a>
             {% endif %}
+            -->
+            <a href="{{ sm[key].href }}{{ sm[key].id }}" title="{{ sm[key].title }}"><img src="{{ sm[key].path }}" width="18" style="margin-right: 2px;"></a>
         {% endif %}
     {% endfor %}
 </div>

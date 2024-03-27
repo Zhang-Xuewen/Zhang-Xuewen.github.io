@@ -3,18 +3,21 @@ email:
   href: 'mailto:'
   title: 'Email'
   fa-icon: 'fa fa-envelope'
+  path: 'https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/b562e848-3749-4c7b-85d4-51a00358657c'
 
 linkedin:
   id: 'xuewen-zhang-b98917242'
   href: 'https://www.linkedin.com/in/'
   title: 'Linkedin'
   fa-icon: 'fab fa-linkedin'
+  path: 'https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/484b2155-a660-486a-a242-d6f24464b665'
 
 github:
   id: 'QiYuan-Zhang'
   href: 'https://github.com/'
   title: 'GitHub'
   fa-icon: 'fab fa-github'
+  path: 'https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/60ba4685-833e-49da-89f4-2fcb21112316'
 
 bilibili:
   id: '382344440'
