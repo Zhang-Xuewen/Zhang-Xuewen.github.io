@@ -50,7 +50,7 @@ body {
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 @media (min-width: 38em) {
   html {
@@ -108,9 +108,8 @@ h4, h5, h6 {
   font-size: 1rem;
 }
 
-/* ______Body text______ */
+/* ______Body text (html) = Body text (markdown)______ */
 p {
-  font-family: 'East Sea Dokdo', cursive;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -120,7 +119,7 @@ strong {
 }
 
 
-/* Lists */
+/* ______Lists (html) == Lists (markdown)_______ */
 ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -160,7 +159,7 @@ pre {
 }
 code {
   padding: .25em .5em;
-  font-size: 85%;
+  font-size: 85%;      /* used to be 85%*/
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 3px;
@@ -207,20 +206,20 @@ pre code {
 }
 .gist .gist-file .gist-data {
   font-size: .8rem !important;
-  line-height: 1.4;
 }
 .gist code {
   padding: 0;
   color: inherit;
   background-color: transparent;
   border-radius: 0;
+  font_size: 60px;
 }
 
 /* Quotes */
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
+  color: #7a7a7a;             /* grey color */
   border-left: .25rem solid #e5e5e5;
 }
 blockquote p:last-child {

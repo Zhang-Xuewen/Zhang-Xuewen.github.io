@@ -7,6 +7,7 @@ permalink: /publication/
 body {font-family: 'East Sea Dokdo', cursive;
       font-size: 30px;
       line-height: 1.3;}
+code {font-size: 55%;}
 </style>
 
 <div style="display: flex;">
