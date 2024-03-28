@@ -18,8 +18,7 @@ body {font-family: 'East Sea Dokdo', cursive;
 
 <img align='right' src='/home/IMG_5777.PNG' width='150'>
 
-<br/><br/>
-<br/><br/>
+<br>
 
 <!--
 ![IMG_5779](https://github.com/QiYuan-Zhang/QiYuan-Zhang/assets/53491122/5f581d3f-4533-4ab7-9885-6f78b7082a97)
@@ -46,26 +45,31 @@ body {font-family: 'East Sea Dokdo', cursive;
   🔬 Cross-entropy method
 </p>
 
+<img align='left' src='/home/IMG_5775.PNG' width='120'>
+
+<img align='right' src='/home/IMG_5776.PNG' width='150'>
+
 <h2>Applications</h2>
 <p>
   ✨ Reactor-separator process <br>
   ✨ Shipboard post-combustion carbon capture process
 </p>
 
-<img align='left' src='/home/IMG_5775.PNG' width='120'>
-
-<img align='right' src='/home/IMG_5776.PNG' width='150'>
-
-
 
 </div>
 
+
+<br>
+
+
+
+
 <!-- This loops through the paginated posts -->
+<h1>Interesting notes</h1>
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
-    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <p class="post-date"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></p>
     {{ post.excerpt }}
   </div>
   {% endfor %}
