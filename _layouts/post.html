@@ -20,14 +20,7 @@ layout: default_post
   <h1>Recent Posts</h1>
   <ul class="recent-posts">
     {% for post in site.related_posts limit:3 %}
-      <li>
-        <h4>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-          <small>[{{ post.date | date_to_string }}]</small>
-        </h4>
-      </li>
+      <p style="line-height: 0.2;"><small>[{{ post.date | date_to_string }}]</small> <a href="{{ post.url }}">{{ post.title }}</a></p>
     {% endfor %}
   </ul>
 </div>

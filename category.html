@@ -12,15 +12,15 @@ title: Categories
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
 
-    <h2 class="category-head">{{ category_name }}</h2>
+    <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
     <article class="recent-posts">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}} </a><small>[{{ post.date | date_to_string }}]</small></h4>
+      <h3 style="line-height: 0.2;"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}} </a><small style="position: absolute; right: 40%;">[{{ post.date | date_to_string }}]</small></h3>
     </article>
     
     {% endfor %}
-    <hr></hr>
+    <hr>
   </div>
 {% endfor %}
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Introduction to Jekyll"
 date:   2024-03-28 14:39:12 +0800
-categories: "Learning notes"
+categories: Learning-notes
 ---
 
 <style>
@@ -93,7 +93,7 @@ jekyll doctor             # diagnosis, output disposed packages and problematic 
 
 # Possible problems
 
-## Dependency Error:
+## Dependency Error
 
 ![image](https://github.com/QiYuan-Zhang/Introduction-of-Jekyll/assets/53491122/592b44e9-61d9-4346-b4a9-d118e36e991f) 
 Solution: Add `gem "jekyll-paginate"` command in Gemfile

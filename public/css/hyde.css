@@ -71,8 +71,16 @@ html {
     bottom: 0;
     width: 18rem;
     text-align: right;
+    font-family: 'East Sea Dokdo', cursive;
   }
 }
+
+/* Sidebar paragraph */
+.sidebar p {
+  font-size: 20px;
+  color: #7a7a7a;
+}
+
 
 /* Sidebar links */
 .sidebar a {
