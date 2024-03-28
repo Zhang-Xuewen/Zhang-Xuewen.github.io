@@ -176,7 +176,7 @@ a.sidebar-nav-item:active {
 
 @media (min-width: 48em) {
   .content {
-    max-width: 60rem;
+    max-width: 65rem;    /* Change the width of the pages*/
     margin-left: 20rem;
     margin-right: 2rem;
   }

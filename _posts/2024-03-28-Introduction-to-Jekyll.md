@@ -59,7 +59,7 @@ cd projectdir              # to your dir where have the _config.yml file
 bundle exec jekyll serve   # Start the local server (This will help ensure the proper Jekyll version is running.) 
 jekyll serve               # Start the local server 
 ```
-Go to: **http://localhost:4000 in browser**
+Go to: **http://localhost:4000** in browser
 > Note: if met problem shows lack of gem dependencies
 ```
 bundle install             # install required dependencies
@@ -95,14 +95,14 @@ jekyll doctor             # diagnosis, output disposed packages and problematic 
 
 ## Dependency Error:
 
-![image](https://github.com/QiYuan-Zhang/Introduction-of-Jekyll/assets/53491122/592b44e9-61d9-4346-b4a9-d118e36e991f) \
+![image](https://github.com/QiYuan-Zhang/Introduction-of-Jekyll/assets/53491122/592b44e9-61d9-4346-b4a9-d118e36e991f) 
 Solution: Add `gem "jekyll-paginate"` command in Gemfile
 
 ## Version imcompatiable
 Solution: In Gemfile, change the `gem "jekyll", "~> 3.9.5"` to your own version
 
 ## Load error
-![image](https://github.com/QiYuan-Zhang/Introduction-of-Jekyll/assets/53491122/9571cb1f-48e0-477b-8f8f-5f29e953a415)\
+![image](https://github.com/QiYuan-Zhang/Introduction-of-Jekyll/assets/53491122/9571cb1f-48e0-477b-8f8f-5f29e953a415)
 Solution: `bundle add webrick`
 
 # Experience
