@@ -20,6 +20,7 @@
  *
  * Global resets
  * Sidebar
+ * Table content bar
  * Container
  * Reverse layout
  * Themes
@@ -144,8 +145,7 @@ a.sidebar-nav-item:active {
 }
 
 
-
-/* _______Sticky sidebar_______
+/* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
  * contents to the bottom of the sidebar in tablets and up.
@@ -163,7 +163,105 @@ a.sidebar-nav-item:active {
 
 
 
-/* _______Container_______
+
+
+
+/* _______Table content table_______
+ *
+ *
+ *
+ */
+
+
+.tablecontentbar {
+  text-align: center;
+  line-height: 1;
+  font-size: 20px;
+  padding: 2rem 1rem;
+  color: rgba(0,0,0,.5);
+  background-color: rgba(248,248,248,.3);
+}
+@media (min-width: 20em) {
+  .tablecontentbar {
+    position: fixed;
+    top：   0rem;
+    right:  0;
+    bottom: auto;
+    left:   auto;
+    width: 12rem;
+    text-align: left;
+  }
+}
+
+/* tablecontentbar links */
+.tablecontentbar a {
+  color: #1a1818;
+}
+
+/* tablecontentbar Title section */
+.tablecontentbar-title h1 {
+  color: #1a1818;
+  margin-top: 0;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 3.25rem;
+}
+
+/* tablecontentbar nav */
+.tablecontentbar-nav {
+  margin-bottom: 1rem;
+}
+
+.tablecontentbar-nav-new {
+  color: #1a1818;
+  margin-bottom: 0;
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 40px;
+}
+
+.tablecontentbar-nav-item {
+  margin-bottom: 0.5rem;
+  display: block;
+  line-height: 1;
+}
+a.tablecontentbar-nav-item {
+  color: #1a1818;
+  text-decoration: none;
+}
+a.tablecontentbar-nav-item:hover,
+a.tablecontentbar-nav-item:focus {
+  text-decoration: underline;
+  text-decoration-color: gold;
+}
+a.tablecontentbar-nav-item:active {
+  font-weight: bold;
+}
+
+
+
+/* Sticky tablecontentbar
+ *
+ * Add the `tablecontentbar-sticky` class to the sidebar's container to affix it the
+ * contents to the bottom of the sidebar in tablets and up.
+ */
+
+@media (min-width: 48em) {
+  .tablecontentbar-sticky {
+    position: absolute;
+    top：   0rem;
+    right:  0;
+    bottom: auto;
+    left:   auto;
+  }
+}
+
+
+
+
+
+
+
+
+/* _______Container with one sidebar_______
  *
  * Align the contents of the site above the proper threshold with some margin-fu
  * with a 25%-wide `.sidebar`.
@@ -186,6 +284,32 @@ a.sidebar-nav-item:active {
   .content {
     margin-left: 22rem;
     margin-right: 4rem;
+  }
+}
+
+/* _______Container with one left sidebar and one right table content bar in post_______
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+
+.post_content {
+  padding-top:    4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 48em) {
+  .post_content {
+    max-width: 65rem;    /* Change the width of the pages*/
+    margin-left: 20rem;
+    margin-right: 10rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .post_content {
+    margin-left: 22rem;
+    margin-right: 12rem;
   }
 }
 

@@ -1,0 +1,20 @@
+<!-- Web page default template for post with automatically generated table content-->
+<!DOCTYPE html>                <!-- define the document type and version of HTML being used -->
+<html lang="en-us">            <!-- specifies the language of the content -->
+
+{% include head.html %}                    <!-- include file -->
+{% include google_analytics.html %}        <!-- include file -->
+
+  <!-- beginning of the body structure of the html -->
+  <body>
+
+    {% include sidebar.html %}         <!-- include file, build the sidebar -->
+    {% include tablecontentbar.html %} <!-- include file, build the table content bar -->
+
+    <div class="post_content container">    <!-- main content of the page, use post_content and container style-->
+      {{ content }}
+    </div>
+
+  </body>
+
+</html>
