@@ -16,7 +16,7 @@ title: Categories
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
     <article class="recent-posts">
-      <h3 style="line-height: 0.2;"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}} </a><small style="position: absolute; right: 40%;">[{{ post.date | date_to_string }}]</small></h3>
+      <p style="line-height: 0.2;"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}} </a><small style="position: absolute; right: 40%;">[{{ post.date | date_to_string }}]</small></p>
     </article>
     
     {% endfor %}

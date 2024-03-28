@@ -135,6 +135,11 @@ a.sidebar-nav-item:active {
 }
 
 /*Recent post titles*/
+.recent-posts {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 30px;
+}
+
 .recent-posts a {
   text-decoration: none;
 }

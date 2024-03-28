@@ -68,9 +68,10 @@ body {font-family: 'East Sea Dokdo', cursive;
 <h1>Interesting notes</h1>
 <div class="posts">
   {% for post in paginator.posts %}
-  <div class="post">
-    <p class="post-date"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></p>
-    {{ post.excerpt }}
+  <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
+    <p class="post-date" style="margin-bottom: 0px;"><a class="post-title" href="{{ post.url }}">{{ post.title }}</a></p>
+    <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ post.date | date_to_string }}</span>
+      {{ post.excerpt }}
   </div>
   {% endfor %}
 </div>
