@@ -179,7 +179,7 @@ a.sidebar-nav-item:active {
   font-size: 20px;
   padding: 2rem 1rem;
   color: rgba(0,0,0,.5);
-  background-color: rgba(248,248,248,.3);
+  background-color: rgba(246, 246, 238,.5);
 }
 @media (min-width: 20em) {
   .tablecontentbar {
@@ -188,10 +188,11 @@ a.sidebar-nav-item:active {
     right:  0;
     bottom: auto;
     left:   auto;
-    width: 12rem;
+    width: 16rem;
     text-align: left;
   }
 }
+
 
 /* tablecontentbar links */
 .tablecontentbar a {
@@ -205,6 +206,8 @@ a.sidebar-nav-item:active {
   font-family: 'East Sea Dokdo', cursive;
   font-size: 3.25rem;
 }
+
+
 
 /* tablecontentbar nav */
 .tablecontentbar-nav {
@@ -302,14 +305,14 @@ a.tablecontentbar-nav-item:active {
   .post_content {
     max-width: 65rem;    /* Change the width of the pages*/
     margin-left: 20rem;
-    margin-right: 10rem;
+    margin-right: 14rem;
   }
 }
 
 @media (min-width: 64em) {
   .post_content {
     margin-left: 22rem;
-    margin-right: 12rem;
+    margin-right: 16rem;
   }
 }
 
