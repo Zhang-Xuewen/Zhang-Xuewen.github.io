@@ -12,7 +12,7 @@ categories: Learning-notes
 
 ---
 
-# Installation 
+# Installation on <span style='color:#e32724'>Windows</span>
 
 > Note: jekyll and Ruby version should be the same as github website support version if using github website \
 > [Github config](https://pages.github.com/versions/) \
