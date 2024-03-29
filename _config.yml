@@ -32,8 +32,16 @@ collections:
     output:       true
     permalink: /:collection/:path/
 
+# Variables
+#defaults:
+#  -
+#    scope:
+#      path: ""
+#      values:
+#        figs_categories: "{{site.figs_categories}}"        # make figs_categories accessable for all pages defined in default.html
 
-# version:          2.1.0
+
+  # version:          2.1.0
 github:           
   repo:           https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io
 

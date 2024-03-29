@@ -9,8 +9,6 @@ title: Categories
 {% for category in site.categories %}
   <div class="archive-group">
     {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
 
     <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
     <a name="{{ category_name | slugize }}"></a>

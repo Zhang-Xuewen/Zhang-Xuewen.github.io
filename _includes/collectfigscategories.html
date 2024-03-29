@@ -1,5 +1,5 @@
 <!-- Collect the categories under _figs collection (site.figs) -->
-{% assign figs_categories = "" | join:'|' | append:'|' %}
+{% assign figs_categories = "" %}
 
 {% for fig in site.figs %}
     {% for category in fig.categories %}
@@ -9,5 +9,4 @@
     {% endfor %}
 {% endfor %}
 
-
-{% assign site.figs_categories = figs_categories %}
+{% assign figs_categories = figs_categories | split: '|' %}

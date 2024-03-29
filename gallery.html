@@ -5,33 +5,18 @@ title: Gallery
 ---
 
 
-load ok !
-
-<p>-----------</p>
-
-<p>{{figs_categories}}</p>
-
-
-
-<p>-----------</p>
+{% include collectfigscategories.html %} <!-- include function, to get variables: figs_categories-->
 
 
 <div id="archives">
-  <!--
-  {% include collectfigscategories.html %} -->        <!-- include file -->
 
-
-  {% for category in site.figs_categories %}
+  {% for category in figs_categories %}
     <div class="archive-group">
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <div id="#{{ category_name | slugize }}"></div>
-      <p></p>
 
-      <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
-      <a name="{{ category_name | slugize }}"></a>
+      <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
 
       {% for fig in site.figs %}
-        {% if fig.categories contains category_name %}
+        {% if fig.categories contains category %}
             <article class="recent-posts">
               <p style="line-height: 0.8;"><small>[{{ fig.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ fig.url }}">{{fig.title}} </a></p>
             </article>
@@ -40,5 +25,7 @@ load ok !
 
       <hr>
     </div>
+
   {% endfor %}
+
 </div>
