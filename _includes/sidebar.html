@@ -36,26 +36,12 @@
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ '/publication' | relative_url }}">Publication</a>
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ '/about' | relative_url }}">About</a>
 
-      <!-- Uncomment for auto order -->
-      <!-- {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages %}
-      {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
-        {% endif %}
-      {% endfor %} -->
 
       {% include social_links.html %}
-
     </nav>
 
     <p>&copy; {{ site.time | date: '%Y-%m' }}. All rights reserved.</p>
+
   </div>
 
 </div>
