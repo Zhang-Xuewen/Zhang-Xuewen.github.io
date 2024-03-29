@@ -49,6 +49,26 @@ html {
   }
 }
 
+/*
+ * __________Social media__________
+ *
+ * Flexible banner for housing site name, intro, and "footer" content. Starts
+ * out above content in mobile and later moves to the side with wider viewports.
+ */
+
+.socialmedia {
+  justify-content: center;
+  color: rgba(255,255,255,.5);
+  background-color: #202020;
+}
+@media (min-width: 48em) {
+  .socialmedia {
+    justify-content: flex-end;      /* if windows larger than 48em, then socialmedia align right, otherwise centered */
+    font-family: 'East Sea Dokdo', cursive;
+  }
+}
+
+
 
 /*
  * __________Sidebar__________
@@ -70,7 +90,7 @@ html {
     left: 0;
     bottom: 0;
     width: 18rem;
-    text-align: right;
+    text-align: right;      /* if windows larger than 48em, then text align right, otherwise centered */
     font-family: 'East Sea Dokdo', cursive;
   }
 }

@@ -13,8 +13,9 @@
 
       <div style="height: 20px;"></div>                   <!--add blank row -->
 
-      <h1>
-          {{ site.title }}
+      <h1 style="display: flex; justify-content: center;">
+          <!-- {{ site.title }} -->    <!-- Remove this, because I want to make one symbol to be superlink for vlogs -->
+          Q<a style="margin-top: 0.45rem;" onmouseover="this.style.textDecoration='none'" onmouseout="this.style.textDecoration='none'" class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ '/vlogs' | relative_url }}">i</a>Yuan's Web
       </h1>
 
       <!--
