@@ -18,6 +18,7 @@ load ok !
 
   {% for fig in site.figs %}
     {{fig.title}}
+    {{fig.categories}}
     {% for category in fig.categories %}
         {% unless figs_categories contains category %}
             {% assign file_categories = figs_categories | push: category %}
