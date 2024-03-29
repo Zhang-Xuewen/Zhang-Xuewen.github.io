@@ -206,8 +206,8 @@ a.sidebar-nav-item:active {
  */
 
 
-.tablecontentbar {
-  text-align: center;
+.tablecontentbar {    /* when windows is smaller than 48em */
+  text-align: left;
   line-height: 1;
   font-size: 1rem;
   padding: 2rem 1rem;
@@ -215,9 +215,9 @@ a.sidebar-nav-item:active {
   background-color: rgba(246, 246, 238,.5);
 }
 @media (min-width: 48em) {
-  .tablecontentbar {
+  .tablecontentbar { /* when windows is bigger than 48em */
     position: fixed;
-    top：   0rem;
+    top：   0;
     right:  0;
     bottom: auto;
     left:   auto;
@@ -280,13 +280,13 @@ a.tablecontentbar-nav-item:active {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-@media (min-width: 48em) {
+@media (min-width: 48em) {   /* when windows is bigger than 48em */
   .tablecontentbar-sticky {
     position: absolute;
     right:  1rem;
-    top: 30rem;
+    top: 0rem;
     left:   1rem;
-    bottom: 10rem;
+    bottom: auto;
   }
 }
 
@@ -303,12 +303,12 @@ a.tablecontentbar-nav-item:active {
  * with a 25%-wide `.sidebar`.
  */
 
-.content {
-  padding-top:    4rem;
+.content { /* when windows is smaller than 48em */
+  padding-top:    2rem;
   padding-bottom: 4rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48em) { /* when windows is bigger than 48em */
   .content {
     max-width: 65rem;    /* Change the width of the pages*/
     margin-left: 20rem;
@@ -316,7 +316,7 @@ a.tablecontentbar-nav-item:active {
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64em) { /* when windows is bigger than 64em */
   .content {
     margin-left: 22rem;
     margin-right: 4rem;
@@ -329,20 +329,20 @@ a.tablecontentbar-nav-item:active {
  * with a 25%-wide `.sidebar`.
  */
 
-.post_content {
+.post_content { /* when windows is smaller than 48em */
   padding-top:    4rem;
   padding-bottom: 4rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48em) { /* when windows is bigger than 48em */
   .post_content {
     max-width: 65rem;    /* Change the width of the pages*/
     margin-left: 20rem;
-    margin-right: 14rem;
+    margin-right: 16rem;
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64em) {/* when windows is bigger than 64em */
   .post_content {
     margin-left: 22rem;
     margin-right: 16rem;
