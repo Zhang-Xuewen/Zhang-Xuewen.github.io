@@ -15,6 +15,7 @@ layout: null
    <email>{{ site.author.email }}</email>
  </author>
 
+
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
@@ -35,5 +36,6 @@ layout: null
    <content type="html">{{ fig.content | xml_escape }}</content>
  </entry>
  {% endfor %}
+
 
 </feed>

@@ -28,8 +28,9 @@ paginate_path:    "/blog/page:num/"
 
 # Custom vars
 collections:
-figs:
-output:           true
+  figs:
+    output:       true
+
 
 # version:          2.1.0
 github:           
