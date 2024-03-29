@@ -8,26 +8,27 @@ title: Gallery
 load ok !
 
 
+
 <div id="archives">
-{% for fig in site.figs %}
-    <p>{{fig.categories}}</p>
-{% endfor %}
 
-{% for category in site.gallery %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
+  {% include collectfigscategories.html %}        <!-- include file -->
 
-    <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
-    <a name="{{ category_name | slugize }}"></a>
-    {% for fig_post in site.gallery[category_name] %}
-    <article class="recent-posts">
-      <p style="line-height: 0.2;"><a href="{{ site.baseurl }}{{ post.url }}">{{fig_post.title}} </a><small style="position: absolute; right: 40%;">[{{ fig_post.date | date_to_string }}]</small></p>
-    </article>
-    
-    {% endfor %}
-    <hr>
-  </div>
-{% endfor %}
+  {% for category in site.figs_categories %}
+    <div class="archive-group">
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div id="#{{ category_name | slugize }}"></div>
+      <p></p>
+
+      <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
+      <a name="{{ category_name | slugize }}"></a>
+      {% if fig.categories contains category_name %}
+        {% if category_name == fig.categories%}
+          <article class="recent-posts">
+            <p style="line-height: 0.8;"><small>[{{ fig.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ fig.url }}">{{fig.title}} </a></p>
+          </article>
+        {% endif %}
+      {% endfor %}
+      <hr>
+    </div>
+  {% endfor %}
 </div>
