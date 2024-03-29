@@ -1,0 +1,32 @@
+---
+layout: page
+permalink: /vlogs/
+title: Secret space for <span style='color:#e32724'>Vlogs</span>!
+description: 😱😮Oops, you found my secret space!!! Here are my memorable vlogs! Please keep the secret🙊🙊🙊.
+---
+
+
+{% include collectvlogscategories.html %} <!-- include function, to get variables: vlogs_categories-->
+
+
+<div id="archives">
+
+  {% for category in vlogs_categories %}
+    <div class="archive-group">
+
+      <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
+
+      {% for vlog in site.vlogs %}
+        {% if vlog.categories contains category %}
+            <article class="recent-posts">
+              <p style="line-height: 0.8;"><small>[{{ vlog.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ vlog.url }}">{{vlog.title}} </a></p>
+            </article>
+        {% endif %}
+      {% endfor %}
+
+      <hr>
+    </div>
+
+  {% endfor %}
+
+</div>

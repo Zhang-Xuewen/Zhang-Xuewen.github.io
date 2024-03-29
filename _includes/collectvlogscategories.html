@@ -1,0 +1,12 @@
+<!-- Collect the categories under _vlogs collection (site.vlogs) -->
+{% assign vlogs_categories = "" %}
+
+{% for vlog in site.vlogs %}
+    {% for category in vlog.categories %}
+        {% unless vlogs_categories contains category %}
+            {% assign vlogs_categories = vlogs_categories | append:category | append:'|' %}
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
+
+{% assign vlogs_categories = vlogs_categories | split: '|' %}
