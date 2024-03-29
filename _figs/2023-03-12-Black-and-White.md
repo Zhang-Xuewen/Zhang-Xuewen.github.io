@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: fig
 title:  "Black and White"
 date:   2023-03-12 
-categories: B&W
+categories: B&W Logo
 ---
 
 > Some black ideas.
