@@ -21,13 +21,15 @@ load ok !
 
       <h1 class="category-head">{{ category_name | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
       <a name="{{ category_name | slugize }}"></a>
-      {% if fig.categories contains category_name %}
-        {% if category_name == fig.categories%}
-          <article class="recent-posts">
-            <p style="line-height: 0.8;"><small>[{{ fig.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ fig.url }}">{{fig.title}} </a></p>
-          </article>
+
+      {% for fig in site.figs %}
+        {% if fig.categories contains category_name %}
+            <article class="recent-posts">
+              <p style="line-height: 0.8;"><small>[{{ fig.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ fig.url }}">{{fig.title}} </a></p>
+            </article>
         {% endif %}
       {% endfor %}
+
       <hr>
     </div>
   {% endfor %}
