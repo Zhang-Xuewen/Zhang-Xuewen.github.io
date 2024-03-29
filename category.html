@@ -6,7 +6,22 @@ title: Categories
 
 
 <div id="archives">
-{% for category in site.categories %}
+<!-- {% for category in site.categories %} -->
+  {% assign figs_categories = "" | split: "|" %}
+
+  {% for fig in site.figs %}
+      {% for category in fig.categories %}
+          {% unless figs_categories contains category %}
+              {% assign file_categories = figs_categories | push: category %}
+          {% endunless %}
+      {% endfor %}
+  {% endfor %}
+
+  {% assign site.figs_categories = figs_categories %}
+
+  {{figs_categories}}
+  {{site.figs_categories}}
+
   <div class="archive-group">
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <div id="#{{ category_name | slugize }}"></div>
