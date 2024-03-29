@@ -2,7 +2,7 @@
 layout: post
 title:  "MATLAB plot functions"
 date:   2023-02-27 
-categories: Learning-notes MATLAB
+categories: paint
 ---
 
 > Some useful information on MATLAB plot

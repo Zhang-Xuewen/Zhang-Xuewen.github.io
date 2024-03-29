@@ -7,9 +7,10 @@ title: Gallery
 
 load ok !
 
+
 <div id="archives">
 {% for fig in site.figs %}
-    <p>{{fig.title}}</p>
+    <p>{{fig.categories}}</p>
 {% endfor %}
 
 {% for category in site.gallery %}

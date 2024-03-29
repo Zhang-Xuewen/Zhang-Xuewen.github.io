@@ -30,6 +30,7 @@ paginate_path:    "/blog/page:num/"
 collections:
   figs:
     output:       true
+    permalink: /:collection/:path/
 
 
 # version:          2.1.0
