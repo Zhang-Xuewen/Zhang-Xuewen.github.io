@@ -14,7 +14,7 @@ categories: Learning-notes
 
 # Installation on <span style='color:#e32724'>Windows</span>
 
-> Note: jekyll and Ruby version should be the same as github website support version if using github website \
+> Note: jekyll and Ruby version should be the same as GitHub website support version if using github website \
 > [Github config](https://pages.github.com/versions/) \
 > [Github guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll#installing-jekyll)
 
@@ -40,7 +40,7 @@ In CMD:
 gem install jekyll         # install jekyll
 jekyll -v                  # check if jekyll install sucessfully (show the version of jeklly)
 ```
-> Note: jekyll and Ruby version should be the same as github website support version if using github website, [Github config](https://pages.github.com/versions/)
+> Note: jekyll and Ruby version should be the same as GitHub website support version if using GitHub website, [GitHub config](https://pages.github.com/versions/)
 ```
 gem "jekyll", "~> 3.9.5"   # change the jekyll to specific version
 gem unistall jekyll        # uninstall jekyll
@@ -86,7 +86,7 @@ jekyll doctor             # diagnosis, output disposed packages and problematic 
 - **index.md**:    content of Home page. will be converted to html file and save under _site when constructing
 - **404.html**:    content of 404 page.
 - **.gitignore**:  files not be pushed in Git
-- **Gemfile**: config of Gem, if using github website, set `gem "github-pages", group: :jekyll_plugins`
+- **Gemfile**: config of Gem, if using GitHub website, set `gem "github-pages", group: :jekyll_plugins`
 
 # Possible problems
 
@@ -104,5 +104,5 @@ Solution: `bundle add webrick`
 
 # Experience
 
-- Even in [Github config](https://pages.github.com/versions/), the Ruby version is 2.7.4 which is very old, and can not set up RubyGems. But in practice, using the latest version Ruby is still ok. 
+- Even in [GitHub config](https://pages.github.com/versions/), the Ruby version is 2.7.4 which is very old, and can not set up RubyGems. But in practice, using the latest version Ruby is still ok. 
 - In my own case, even though do not change the `gem "minima", "~> 2.5"` to `gem "github-pages", group: :jekyll_plugins`. It can still build the pages sucessfully and shows the same as Github.
