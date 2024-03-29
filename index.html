@@ -57,7 +57,7 @@ title: Home
 
 <img style='margin-bottom: -3rem' align='left' src="{{ '/' | relative_url }}public/images/IMG_5775.PNG" width='120'>
 <br>
-<h1 style='margin-bottom: -2rem'> &ensp; Interesting notes</h1>
+<h1 style='margin-bottom: -2rem; margin-top: 0rem;'> &ensp; Interesting notes</h1>
 
 <br>
 <br>
@@ -65,7 +65,7 @@ title: Home
 <!-- This loops through the paginated posts -->
 
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in paginator.posts %}     <!-- Put at most 10 posts, defined at _config.yml -->
   <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
     <p class="post-date" style="margin-bottom: 0px;"> <a class="post-title" href="{{ post.url }}">{{ post.title }}</a></p>
     <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ post.date | date_to_string }}</span>
@@ -75,7 +75,27 @@ title: Home
 </div>
 
 
-<img align='left' src="{{ '/' | relative_url }}public/images/IMG_5776.PNG" width='150'>
+<img style='margin-bottom: -1rem' align='left' src="{{ '/' | relative_url }}public/images/IMG_5776.PNG" width='150'>
+
+<h1 style='margin-bottom: -3rem; margin-top: 3rem;'> &ensp; Artworks maybe?</h1>
+
+<br>
+<br>
+<br>
+
+<div class="posts">
+  {% assign displayed_fig_count = 0 %}
+  {% for fig in site.figs %}
+    {% if displayed_fig_count < 5 %}         <!-- Put at most 5 fig posts -->
+      <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
+        <p class="post-date" style="margin-bottom: 0px;"> <a class="post-title" href="{{ fig.url }}">{{ fig.title }}</a></p>
+        <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ fig.date | date_to_string }}</span>
+        {{ fig.excerpt }}
+      </div>
+      {% assign displayed_fig_count = displayed_fig_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 
 
