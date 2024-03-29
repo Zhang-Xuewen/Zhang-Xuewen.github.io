@@ -10,6 +10,8 @@ categories: Learning-notes CasADi
 
 CSDN notes link: [1][1] [2][2]
 
+---
+
 # Variables
 ## SX 
 SX data type represent matrix: create a matrix $x \in R^{2 \times 2}$

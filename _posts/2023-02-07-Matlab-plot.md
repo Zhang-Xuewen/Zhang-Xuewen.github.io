@@ -7,7 +7,9 @@ categories: Learning-notes MATLAB
 
 > Some useful information on MATLAB plot
 
-# Some color Code
+---
+
+# Some color Codes
 - Deep Green :  #008000
 
 # Functions

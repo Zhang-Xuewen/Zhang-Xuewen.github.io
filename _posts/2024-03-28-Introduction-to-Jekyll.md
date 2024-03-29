@@ -10,6 +10,8 @@ categories: Learning-notes
 
 > Try to learn the Jekyll and take some notes
 
+---
+
 # Installation 
 
 > Note: jekyll and Ruby version should be the same as github website support version if using github website \
