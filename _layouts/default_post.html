@@ -1,9 +1,12 @@
+<!-- Not used, because all use the default.html now and the different class for content is placed at page.html and post.html-->
 <!-- Web page default template for post with automatically generated table content-->
 <!DOCTYPE html>                <!-- define the document type and version of HTML being used -->
 <html lang="en-us">            <!-- specifies the language of the content -->
 
 {% include head.html %}                    <!-- include file -->
 {% include google_analytics.html %}        <!-- include file -->
+{% include collectfigscategories.html %}   <!-- include file -->
+
 
 
   <!-- beginning of the body structure of the html -->
@@ -14,6 +17,7 @@
 
     <div class="post_content container">    <!-- main content of the page, use post_content and container style-->
       {{ content }}
+
     </div>
 
   </body>

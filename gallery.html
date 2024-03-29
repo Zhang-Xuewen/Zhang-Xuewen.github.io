@@ -7,29 +7,18 @@ title: Gallery
 
 load ok !
 
+<p>-----------</p>
+
+<p>{{figs_categories}}</p>
+
+
+
+<p>-----------</p>
 
 
 <div id="archives">
   <!--
   {% include collectfigscategories.html %} -->        <!-- include file -->
-
-  <!-- Collect the categories under _figs collection (site.figs) -->
-  {% assign figs_categories = "" | split: "|" %}
-
-  {% for fig in site.figs %}
-    {{fig.title}}
-    {{fig.categories}}
-    {% for category in fig.categories %}
-        {% unless figs_categories contains category %}
-            {% assign file_categories = figs_categories | push: category %}
-        {% endunless %}
-    {% endfor %}
-  {% endfor %}
-
-  {% assign site.figs_categories = figs_categories %}
-  {{ figs_categories }}
-  {{ site.figs_categories }}
-
 
 
   {% for category in site.figs_categories %}
