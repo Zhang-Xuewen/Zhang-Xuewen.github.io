@@ -3,12 +3,7 @@ layout: page
 title: Publication
 permalink: /publication/
 ---
-<style>
-body {font-family: 'East Sea Dokdo', cursive;
-      font-size: 30px;
-      line-height: 1.3;}
-code {font-size: 55%;}
-</style>
+
 
 <div style="display: flex;">
     <img src="https://github.com/QiYuan-Zhang/QiYuan-Zhang.github.io/assets/53491122/75da1264-63b5-44ac-83db-a12fe8836300" width="20">  <a href="https://scholar.google.com/citations?user=VDS2k4oAAAAJ&hl=en&oi=ao">Google Scholar</a>

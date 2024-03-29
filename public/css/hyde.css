@@ -77,7 +77,7 @@ html {
 
 /* Sidebar paragraph */
 .sidebar p {
-  font-size: 20px;
+  font-size: 1rem;
   color: #7a7a7a;
 }
 
@@ -104,7 +104,7 @@ html {
   color: #fff;
   margin-bottom: 0;
   font-family: 'East Sea Dokdo', cursive;
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 .sidebar-nav-item {
@@ -137,7 +137,7 @@ a.sidebar-nav-item:active {
 /*Recent post titles*/
 .recent-posts {
     font-family: 'East Sea Dokdo', cursive;
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 .recent-posts a {
@@ -189,12 +189,12 @@ a.sidebar-nav-item:active {
 .tablecontentbar {
   text-align: center;
   line-height: 1;
-  font-size: 20px;
+  font-size: 1rem;
   padding: 2rem 1rem;
   color: rgba(0,0,0,.5);
   background-color: rgba(246, 246, 238,.5);
 }
-@media (min-width: 20em) {
+@media (min-width: 48em) {
   .tablecontentbar {
     position: fixed;
     top：   0rem;
@@ -231,7 +231,7 @@ a.sidebar-nav-item:active {
   color: #1a1818;
   margin-bottom: 0;
   font-family: 'East Sea Dokdo', cursive;
-  font-size: 40px;
+  font-size: 1rem;
 }
 
 .tablecontentbar-nav-item {
@@ -263,10 +263,10 @@ a.tablecontentbar-nav-item:active {
 @media (min-width: 48em) {
   .tablecontentbar-sticky {
     position: absolute;
-    top：   0rem;
-    right:  0;
-    bottom: auto;
-    left:   auto;
+    right:  1rem;
+    top: 30rem;
+    left:   1rem;
+    bottom: 10rem;
   }
 }
 
