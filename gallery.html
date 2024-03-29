@@ -12,7 +12,7 @@ load ok !
 <div id="archives">
 
   {% include collectfigscategories.html %}        <!-- include file -->
-
+  {{site.figs_categories}}
   {% for category in site.figs_categories %}
     <div class="archive-group">
       {% capture category_name %}{{ category | first }}{% endcapture %}
