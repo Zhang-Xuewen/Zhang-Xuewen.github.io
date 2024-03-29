@@ -71,6 +71,14 @@ body {
 }
 
 
+/* Vlog vedio size*/
+.video {
+    width: 30rem;
+    height: 16.875rem;
+}
+
+
+
 
 
 /* No `:visited` state is required by default (browsers will use `a`) */
@@ -379,6 +387,7 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 1rem;
   color: #9a9a9a;
 }
+
 
 /* Related posts */
 .related {
