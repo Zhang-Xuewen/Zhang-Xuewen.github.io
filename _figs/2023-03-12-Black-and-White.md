@@ -2,7 +2,7 @@
 layout: fig
 title:  "Black and White"
 date:   2023-03-12 
-categories: B&W Logo
+categories: B&W
 ---
 
 > Some black ideas.
