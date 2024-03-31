@@ -73,9 +73,17 @@ body {
 
 /* Vlog vedio size*/
 .video {
-    width: 30rem;
-    height: 16.875rem;
+    width: 20rem;
+    height: 11.25rem;
 }
+
+@media (min-width: 48em) {
+    .video {
+        width: 40rem;   /* if windows larger than 48em, then video size is 40rem, otherwise centered */
+        height: 22.5rem;
+    }
+}
+
 
 
 
