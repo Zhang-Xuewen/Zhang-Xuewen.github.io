@@ -1,0 +1,12 @@
+<!-- Collect the categories under _figs collection (site.figs) -->
+{% assign shots_categories = "" %}
+
+{% for shot in site.shots %}
+    {% for category in shot.categories %}
+        {% unless shots_categories contains category %}
+            {% assign shots_categories = shots_categories | append:category | append:'|' %}
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
+
+{% assign shots_categories = shots_categories | split: '|' %}

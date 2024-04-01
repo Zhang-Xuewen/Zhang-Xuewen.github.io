@@ -1,0 +1,32 @@
+---
+layout: page
+permalink: /shots/
+title: Shots
+description: Here are some beautiful shots.
+---
+
+
+{% include collectshotscategories.html %} <!-- include function, to get variables: shots_categories-->
+
+
+<div id="archives">
+
+  {% for category in shots_categories %}
+    <div class="archive-group">
+
+      <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
+
+      {% for shot in site.shots %}
+        {% if shot.categories contains category %}
+            <article class="recent-posts">
+              <p style="line-height: 0.8;"><small>[{{ shot.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ shot.url }}">{{shot.title}} </a></p>
+            </article>
+        {% endif %}
+      {% endfor %}
+
+      <hr>
+    </div>
+
+  {% endfor %}
+
+</div>

@@ -54,7 +54,7 @@ title: Home
 <br>
 
 
-
+<!-- ___________Posts notes categories present___________ -->
 <img style='margin-bottom: -3rem' align='left' src="{{ '/' | relative_url }}public/images/IMG_5775.PNG" width='120'>
 <br>
 <h1 style='margin-bottom: -2rem; margin-top: 0rem;'> &ensp; Interesting notes</h1>
@@ -75,6 +75,31 @@ title: Home
 </div>
 
 
+<!-- ___________Shots categories present___________ -->
+<img style='margin-bottom: -1rem' align='left' src="{{ '/' | relative_url }}public/images/camera.png" width='160'>
+
+<h1 style='margin-bottom: -3rem; margin-top: 2.5rem;'> &ensp;Have a look of the world inside my eyes</h1>
+
+<br>
+<br>
+<br>
+
+<div class="posts">
+  {% assign displayed_shot_count = 0 %}
+  {% for shot in site.shots %}
+    {% if displayed_shot_count < 5 %}         <!-- Put at most 5 fig posts -->
+      <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
+        <p class="post-date" style="margin-bottom: 0px;"> <a class="post-title" href="{{ shot.url }}">{{ shot.title }}</a></p>
+        <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ shot.date | date_to_string }}</span>
+        {{ shot.excerpt }}
+      </div>
+      {% assign displayed_shot_count = displayed_shot_count | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+<!-- ___________Figures categories present___________ -->
 <img style='margin-bottom: -1rem' align='left' src="{{ '/' | relative_url }}public/images/IMG_5776.PNG" width='150'>
 
 <h1 style='margin-bottom: -3rem; margin-top: 3rem;'> &ensp; Artworks maybe?</h1>
@@ -96,7 +121,6 @@ title: Home
     {% endif %}
   {% endfor %}
 </div>
-
 
 
 <!-- Pagination links -->
