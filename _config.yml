@@ -34,7 +34,7 @@ collections:
   vlogs:
     output:       true
     permalink:    /:collection/:path/
-  Shots:
+  shots:
     output:       true
     permalink:   /:collection/:path/
 
