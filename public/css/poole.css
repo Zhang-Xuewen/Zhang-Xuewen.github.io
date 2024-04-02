@@ -73,8 +73,8 @@ body {
 
 /* Vlog vedio size*/
 .video {
-    width: 20rem;
-    height: 11.25rem;
+    width: 15rem;
+    height: 8.4375rem;
 }
 
 @media (min-width: 48em) {
