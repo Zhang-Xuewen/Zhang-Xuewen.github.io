@@ -28,11 +28,14 @@ layout: default
   <ul class="recent-posts">
     {% assign printed_vlog_urls = "" %}
     {% assign printed_vlog_count = 0 %}
-    {% for vlog in site.vlogs %}
+    {% assign current_categories = page.categories %}
+    {% assign sorted_vlogs = site.vlogs | sort: 'date' | reverse %}
+
+    {% for vlog in sorted_vlogs %}
       {% unless vlog.url == page.url or printed_vlog_count >= 3 %}
         {% assign match_found = false %}
-        {% for category in page.categories %}
-          {% if vlog.categories contains category %}
+        {% for category in vlog.categories %}
+          {% if current_categories contains category %}
             {% assign match_found = true %}
           {% endif %}
         {% endfor %}

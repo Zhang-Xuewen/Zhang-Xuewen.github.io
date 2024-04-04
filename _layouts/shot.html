@@ -30,11 +30,14 @@ layout: default
   <ul class="recent-posts">
     {% assign printed_shot_urls = "" %}
     {% assign printed_shot_count = 0 %}
-    {% for shot in site.shots %}
+    {% assign current_categories = page.categories %}
+    {% assign sorted_shots = site.shots | sort: 'date' | reverse %}
+
+    {% for shot in sorted_shots %}
       {% unless shot.url == page.url or printed_shot_count >= 3 %}
         {% assign match_found = false %}
-        {% for category in page.categories %}
-          {% if shot.categories contains category %}
+        {% for category in shot.categories %}
+          {% if current_categories contains category %}
             {% assign match_found = true %}
           {% endif %}
         {% endfor %}

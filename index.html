@@ -86,10 +86,13 @@ title: Home
 
 <div class="posts">
   {% assign displayed_shot_count = 0 %}
-  {% for shot in site.shots %}
-    {% if displayed_shot_count < 5 %}         <!-- Put at most 5 fig posts -->
+  {% assign sorted_shots = site.shots | sort: 'date' | reverse %} <!-- Display only the posts based on the most recent date -->
+  {% for shot in sorted_shots %}
+    {% if displayed_shot_count < 5 %} <!-- Display only the first 5 shot posts -->
       <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
-        <p class="post-date" style="margin-bottom: 0px;"> <a class="post-title" href="{{ shot.url }}">{{ shot.title }}</a></p>
+        <p class="post-date" style="margin-bottom: 0px;">
+          <a class="post-title" href="{{ shot.url }}">{{ shot.title }}</a>
+        </p>
         <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ shot.date | date_to_string }}</span>
         {{ shot.excerpt }}
       </div>
@@ -97,6 +100,7 @@ title: Home
     {% endif %}
   {% endfor %}
 </div>
+
 
 
 <!-- ___________Figures categories present___________ -->
@@ -110,10 +114,13 @@ title: Home
 
 <div class="posts">
   {% assign displayed_fig_count = 0 %}
-  {% for fig in site.figs %}
-    {% if displayed_fig_count < 5 %}         <!-- Put at most 5 fig posts -->
+  {% assign sorted_figs = site.figs | sort: 'date' | reverse %}
+  {% for fig in sorted_figs %}
+    {% if displayed_fig_count < 5 %} <!-- Display only the first 5 fig posts -->
       <div class="post" style="height: 120px; overflow: hidden; margin-bottom: 20px;">
-        <p class="post-date" style="margin-bottom: 0px;"> <a class="post-title" href="{{ fig.url }}">{{ fig.title }}</a></p>
+        <p class="post-date" style="margin-bottom: 0px;">
+          <a class="post-title" href="{{ fig.url }}">{{ fig.title }}</a>
+        </p>
         <span class="post-date" style="margin-bottom: -15px; font-size: 25px;">{{ fig.date | date_to_string }}</span>
         {{ fig.excerpt }}
       </div>
@@ -121,6 +128,7 @@ title: Home
     {% endif %}
   {% endfor %}
 </div>
+
 
 
 <!-- Pagination links -->

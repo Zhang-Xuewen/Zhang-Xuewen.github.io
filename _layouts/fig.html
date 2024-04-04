@@ -28,11 +28,14 @@ layout: default
   <ul class="recent-posts">
     {% assign printed_fig_urls = "" %}
     {% assign printed_fig_count = 0 %}
-    {% for fig in site.figs %}
+    {% assign current_categories = page.categories %}
+    {% assign sorted_figs = site.figs | sort: 'date' | reverse %}
+
+    {% for fig in sorted_figs %}
       {% unless fig.url == page.url or printed_fig_count >= 3 %}
         {% assign match_found = false %}
-        {% for category in page.categories %}
-          {% if fig.categories contains category %}
+        {% for category in fig.categories %}
+          {% if current_categories contains category %}
             {% assign match_found = true %}
           {% endif %}
         {% endfor %}
