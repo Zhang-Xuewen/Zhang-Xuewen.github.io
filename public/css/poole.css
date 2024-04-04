@@ -85,6 +85,19 @@ body {
 }
 
 
+/* image waterfall layout gallery */
+.gallery {
+            column-count: 2; /* 设置列数 */
+            column-gap: 0.5rem; /* 设置列之间的间隙 */
+        }
+.gallery img {
+    width: 100%;
+    break-inside: avoid; /* 避免图片跨列显示 */
+    margin-bottom: 0.5rem; /* 设置图片之间的间隙 */
+    display: block;
+}
+
+
 
 
 
