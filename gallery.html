@@ -16,11 +16,15 @@ description: Here are some brainstorm artworks.
 
       <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
 
-      {% for fig in site.figs %}
+      {% assign sorted_figs = site.figs | sort: 'date' | reverse %}
+      {% for fig in sorted_figs %}
         {% if fig.categories contains category %}
-            <article class="recent-posts">
-              <p style="line-height: 0.8;"><small>[{{ fig.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ fig.url }}">{{fig.title}} </a></p>
-            </article>
+          <article class="recent-posts">
+            <p style="line-height: 0.8;">
+              <small>[{{ fig.date | date_to_string }}]</small> &emsp;
+              <a href="{{ site.baseurl }}{{ fig.url }}">{{ fig.title }}</a>
+            </p>
+          </article>
         {% endif %}
       {% endfor %}
 

@@ -18,11 +18,15 @@ description: >
 
       <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
 
-      {% for vlog in site.vlogs %}
+      {% assign sorted_vlogs = site.vlogs | sort: 'date' | reverse %}
+      {% for vlog in sorted_vlogs %}
         {% if vlog.categories contains category %}
-            <article class="recent-posts">
-              <p style="line-height: 0.8;"><small>[{{ vlog.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ vlog.url }}">{{vlog.title}} </a></p>
-            </article>
+          <article class="recent-posts">
+            <p style="line-height: 0.8;">
+              <small>[{{ vlog.date | date_to_string }}]</small> &emsp;
+              <a href="{{ site.baseurl }}{{ vlog.url }}">{{ vlog.title }}</a>
+            </p>
+          </article>
         {% endif %}
       {% endfor %}
 

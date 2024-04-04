@@ -16,11 +16,15 @@ description: Here are some beautiful shots.
 
       <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
 
-      {% for shot in site.shots %}
+      {% assign sorted_shots = site.shots | sort: 'date' | reverse %}
+      {% for shot in sorted_shots %}
         {% if shot.categories contains category %}
-            <article class="recent-posts">
-              <p style="line-height: 0.8;"><small>[{{ shot.date | date_to_string }}]</small> &emsp; <a href="{{ site.baseurl }}{{ shot.url }}">{{shot.title}} </a></p>
-            </article>
+          <article class="recent-posts">
+            <p style="line-height: 0.8;">
+              <small>[{{ shot.date | date_to_string }}]</small> &emsp;
+              <a href="{{ site.baseurl }}{{ shot.url }}">{{ shot.title }}</a>
+            </p>
+          </article>
         {% endif %}
       {% endfor %}
 
