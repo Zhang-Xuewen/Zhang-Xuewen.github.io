@@ -56,5 +56,6 @@ plugins:
   - jekyll-archives
   - jekyll-commonmark-ghpages
 
+# disque comment
 disqus:
   shortname: qiyuan
