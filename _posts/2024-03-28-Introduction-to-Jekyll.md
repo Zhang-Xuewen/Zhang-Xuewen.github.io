@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introduction to Jekyll"
-date:   2024-03-28 14:39:12 +0800
+date:   2024-03-28
 categories: Learning-notes
 comments: true
 ---

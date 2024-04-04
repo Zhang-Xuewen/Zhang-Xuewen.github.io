@@ -100,17 +100,15 @@ body {
 
 
 
-
-
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
   /*color: #268bd2;*/
-  color: #515151;
+  color: #303030;
   text-decoration: underline;
   /*text-decoration-color: gold;*/
 }
 a strong {
-  color: #515151;   /* if bold, the color set to this */
+  color: #303030;   /* if bold, the color set to this */
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
