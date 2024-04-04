@@ -110,7 +110,7 @@ a {
   /*text-decoration-color: gold;*/
 }
 a strong {
-  color: inherit;
+  color: #515151;   /* if bold, the color set to this */
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
@@ -154,6 +154,10 @@ p {
 
 strong {
   color: #303030;
+}
+
+b {
+    color: #303030;
 }
 
 
