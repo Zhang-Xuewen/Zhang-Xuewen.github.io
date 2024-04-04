@@ -29,10 +29,15 @@ layout: default
 </div>
 
 
-<!--
-{%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
-{%- endif -%}
--->
+
+<!-- Add disqus comment if page.comments is true -->
+  <br>
+  <br>
+  <br>
+  <hr>
+{% if page.comments %}
+  {% include disqus_comment.html %}
+{% endif %}
+
 
 </div>

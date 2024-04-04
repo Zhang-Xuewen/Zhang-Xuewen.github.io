@@ -3,6 +3,7 @@ layout: fig
 title:  "Messiness"
 date:   2023-02-26
 categories: Freshness
+comments: true
 ---
 
 > Messy plots.

@@ -3,6 +3,7 @@ layout: shot
 title:  "Daily life"
 date:   2023-03-23 
 categories: Daido-Moriyama
+comments: true
 ---
 
 > Shot by GRIIIx.

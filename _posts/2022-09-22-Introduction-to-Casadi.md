@@ -3,6 +3,7 @@ layout: post
 title:  "Introduction to CasADi"
 date:   2022-09-22 
 categories: Learning-notes CasADi
+comments: true
 ---
 
 

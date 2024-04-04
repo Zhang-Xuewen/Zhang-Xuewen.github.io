@@ -3,6 +3,7 @@ layout: fig
 title:  "Black and White"
 date:   2023-03-12 
 categories: B&W
+comments: true
 ---
 
 > Some black ideas.
