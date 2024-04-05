@@ -106,9 +106,15 @@ body {
     box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
     border-radius: 3px;
     /* min-width: 30px; */
-    width: 30rem;
-
+    width: 10rem;   /* if windows less than 48em, then video size is 40rem, otherwise centered */
 }
+
+@media (min-width: 48em) {
+    .protected {
+        width: 30rem;   /* if windows larger than 48em, then video size is 40rem, otherwise centered */
+    }
+}
+
 .protected__content {
     padding: 1.5rem 1.5rem;
 }
