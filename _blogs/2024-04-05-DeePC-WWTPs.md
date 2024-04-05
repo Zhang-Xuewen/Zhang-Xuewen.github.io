@@ -13,7 +13,7 @@ comments: true
 
 
 
-# WWTPs_DeePC Sample Code
+WWTPs_DeePC Sample Code
 
 Method: Date-enabled Predictive Control (DeePC)
 
