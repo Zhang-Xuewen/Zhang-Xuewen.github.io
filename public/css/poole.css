@@ -99,6 +99,71 @@ body {
 
 
 
+/*  The password windows display  */
+.protected {
+    background: #f2efeb;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+    border-radius: 3px;
+    min-width: 100px;
+    width: 30rem;
+
+}
+.protected__content {
+    padding: 1.5rem 1.5rem;
+}
+.protected__content__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    line-height: 1;
+}
+.protected__alert {
+    display: none;  /* First will not shown, only when activate will show the window*/
+    border-bottom: 1px solid transparent;
+    border-radius: 3px 3px 0 0;
+    padding: 0.6rem 0.7rem;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.protected__content__input {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 2rem;
+    display: block;
+    border: solid 1px #ccc;
+    padding: 12px 14px;
+    /* -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1); */    /* add shadow */
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.protected__content__input:focus {
+    outline: none;
+    border-color: #228843;
+}
+
+.protected__content__btn {
+    text-align: right;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 1.3rem;
+    background-color: #228843;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    padding: 12px 14px;
+    line-height: 1.3rem;
+}
+
+.protected__content__btn:hover {
+    background-color: #1C6D36;
+    text-align: right;
+}
+
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {

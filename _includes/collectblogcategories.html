@@ -1,0 +1,12 @@
+<!-- Collect the categories under _figs collection (site.figs) -->
+{% assign blogs_categories = "" %}
+
+{% for pblog in site.blogs %}
+    {% for category in pblog.categories %}
+        {% unless blogs_categories contains category %}
+            {% assign blogs_categories = blogs_categories | append:category | append:'|' %}
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
+
+{% assign blogs_categories = blogs_categories | split: '|' %}
