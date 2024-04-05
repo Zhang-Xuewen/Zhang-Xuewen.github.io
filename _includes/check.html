@@ -26,7 +26,7 @@
             var shaobj = new jsSHA("SHA-256", "TEXT")
             shaobj.update(hash)
             var hash1 = shaobj.getHash("HEX")
-            var url = hash1 + "/index.html/"
+            var url = hash1 + "/index.html"
             var alert = document.querySelectorAll('[data-id="alert"]')
 
             var request = new XMLHttpRequest()
