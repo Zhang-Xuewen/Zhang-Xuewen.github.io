@@ -37,6 +37,9 @@ collections:
   shots:
     output:       true
     permalink:   /:collection/:path/
+  personal_blogs:
+    output:       true
+    permalink:   /:collection/:path/
 
 # Variables
 #defaults:

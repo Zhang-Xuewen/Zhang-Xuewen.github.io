@@ -1,0 +1,39 @@
+---
+layout: page
+permalink: /personal/
+title: Personal space
+description: This is private space under protection.
+---
+
+
+
+{% include collectpersonalcategories.html %} <!-- include function, to get variables: personal_blogs_categories-->
+
+<div id="archives">
+
+  {% for category in personal_blogs_categories %}
+    <div class="archive-group">
+
+      <h1 class="category-head">{{ category | replace: "-", " " }}</h1>    <!--replace the '-' to ' ', which means category name with more than one words needs to connect with '-' -->
+
+      {% assign sorted_blogs = site.personal_blogs | sort: 'date' | reverse %}
+      {% for pblog in sorted_blogs %}
+        {% if pblog.categories contains category %}
+          <article class="recent-posts">
+            <p style="line-height: 0.8;">
+              <small>[{{ pblog.date | date_to_string }}]</small> &emsp;
+              <a href="{{ site.baseurl }}{{ fig.url }}">{{ pblog.title }}</a>
+            </p>
+          </article>
+        {% endif %}
+      {% endfor %}
+
+      <hr>
+    </div>
+
+  {% endfor %}
+
+</div>
+
+<br>
+<a style="text-decoration:none;" href="{{ '/timeline' | relative_url }}"><h1>Timeline of posts</h1></a>
