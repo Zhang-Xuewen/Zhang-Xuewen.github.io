@@ -9,6 +9,8 @@ comments: true
 > Introduction to my developed deepctools toolbox for data-enabled predictive control.
 > 
 > Github project: [link](https://github.com/QiYuan-Zhang/DeePCtools) 
+>
+> PyPI site: [link](https://pypi.org/project/deepctools/)
 
 ---
 
@@ -28,10 +30,12 @@ This package operates within the Python framework.
 
 ### 2. Usage
 
-Download the [*deepctools*](https://github.com/QiYuan-Zhang/DeePCtools/tree/8dbc2458966214bf9885f4d622e20c3b840641e2/deepctools) file and save it to your project directory.
+- Download the [*deepctools*](https://github.com/QiYuan-Zhang/DeePCtools/tree/8dbc2458966214bf9885f4d622e20c3b840641e2/deepctools) file and save it to your project directory.
+
+- Or install using pip
 
 ```
-    import deepctools
+    pip install deepctools
 ```
 Then you can use the deepctools in your python project.
 
