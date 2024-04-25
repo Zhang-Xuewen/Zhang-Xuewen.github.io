@@ -104,7 +104,7 @@ There is a [tutorial]() example to illustrate how to use the *modlinear* to line
 
 Results:
 
-<img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/ad01d15f-f3cb-49ce-bd82-00f82c31ec0d" width="300" alt="A discrete"> <img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/34b33058-0e55-4b26-a6a2-aa54bdb23e0a" width="300" alt="B discrete">
+<img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/ad01d15f-f3cb-49ce-bd82-00f82c31ec0d" width="300" alt="A discrete"> <img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/34b33058-0e55-4b26-a6a2-aa54bdb23e0a" width="50" alt="B discrete">
 
 ## License
 
