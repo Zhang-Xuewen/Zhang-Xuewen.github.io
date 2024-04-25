@@ -12,7 +12,7 @@ A wrapped package to linearize the nonlinear continuous/discrete model. Includin
 
 > Github project: [link](https://github.com/QiYuan-Zhang/ModLinear)
 >
-> Introduction: [link](https://qiyuan-zhang.github.io/my-toolbox/2024/04/25/Developed-modlinear.html)
+> PyPI: [link](https://pypi.org/project/modlinear/)
 
 --- 
 ## I. How to use
