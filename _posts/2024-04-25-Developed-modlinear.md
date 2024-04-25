@@ -10,9 +10,9 @@ comments: true
 
 A wrapped package to linearize the nonlinear continuous/discrete model. Including **numerical** and **symbolic** calculations.
 
-If you have questions, remarks, technical issues etc. feel free to use the issues page of this repository. I am looking forward to your feedback and the discussion.
-
-> Introduction: [link](https://github.com/QiYuan-Zhang/Model_Linearization_toolbox)
+> Github project: [link](https://github.com/QiYuan-Zhang/ModLinear)
+>
+> Introduction: [link](https://qiyuan-zhang.github.io/my-toolbox/2024/04/25/Developed-modlinear.html)
 
 --- 
 ## I. How to use
@@ -28,7 +28,7 @@ This package operates within the Python framework.
 
 ### 2. Usage
 
-- Download the [*modlinear*](https://github.com/QiYuan-Zhang/DeePCtools/tree/8dbc2458966214bf9885f4d622e20c3b840641e2/deepctools) file and save it to your project directory.
+- Download the [*modlinear*](https://github.com/QiYuan-Zhang/ModLinear) file and save it to your project directory.
 
 - Or install using pip
 
@@ -100,15 +100,17 @@ Note: This procedure is applicable to all systems.
 
 ## III. Tutorial 
 
-There is a [tutorial]() example to illustrate how to use the *modlinear* to linearize nonlinear models.
+There is a [tutorial](https://github.com/QiYuan-Zhang/ModLinear/blob/main/tutorial.py) example to illustrate how to use the *modlinear* to linearize nonlinear models.
 
 Results:
 
-<img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/ad01d15f-f3cb-49ce-bd82-00f82c31ec0d" width="300" alt="A discrete"> <img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/34b33058-0e55-4b26-a6a2-aa54bdb23e0a" width="50" alt="B discrete">
+<div style="display: flex; margin-right: 2rem;">
+    <img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/ad01d15f-f3cb-49ce-bd82-00f82c31ec0d" width="300" alt="A discrete"> <img src="https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/34b33058-0e55-4b26-a6a2-aa54bdb23e0a" width="100" alt="B discrete">
+</div>
 
 ## License
 
-The project is released under the APACHE license. See [LICENSE](https://github.com/QiYuan-Zhang/DeePCtools/blob/8dbc2458966214bf9885f4d622e20c3b840641e2/LICENSE) for details.
+The project is released under the APACHE license. See [LICENSE](https://github.com/QiYuan-Zhang/ModLinear/blob/main/LICENSE) for details.
 
 Copyright 2024 Xuewen Zhang
 
