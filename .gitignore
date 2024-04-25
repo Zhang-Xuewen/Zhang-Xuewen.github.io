@@ -1,0 +1,16 @@
+*.pt
+*.pdf
+*.png
+*.eps
+*.svg
+*.mat
+*.npy
+*.asv
+*.txt
+*.xml
+.idea/
+__pycache__/
+_site/
+.jekyll-cache/
+
+
