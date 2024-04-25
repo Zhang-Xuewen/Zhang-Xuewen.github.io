@@ -6,8 +6,8 @@ categories: My-toolbox
 comments: true
 ---
 
-A wrapped package to linearize the nonlinear continuous/discrete model. Including **numerical** and **symbolic** calculations.
-
+> A wrapped package to linearize the nonlinear continuous/discrete model. Including **numerical** and **symbolic** calculations.
+> 
 > Github project: [link](https://github.com/QiYuan-Zhang/ModLinear)
 >
 > PyPI: [link](https://pypi.org/project/modlinear/)
