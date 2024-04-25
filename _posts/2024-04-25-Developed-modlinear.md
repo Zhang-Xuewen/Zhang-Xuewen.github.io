@@ -6,8 +6,6 @@ categories: My-toolbox
 comments: true
 ---
 
-# Model linearization function toolbox
-
 A wrapped package to linearize the nonlinear continuous/discrete model. Including **numerical** and **symbolic** calculations.
 
 > Github project: [link](https://github.com/QiYuan-Zhang/ModLinear)
