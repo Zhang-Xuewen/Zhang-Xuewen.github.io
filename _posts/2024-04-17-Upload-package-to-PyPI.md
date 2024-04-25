@@ -1,193 +1,179 @@
 ---
 layout: post
-title:  "Developed <span style='color:#e32724'>deepctools</span> toolbox"
-date:   2024-04-15
-categories: My-toolbox
+title:  "Upload package to PyPI"
+date:   2024-04-17
+categories: Learning-notes
 comments: true
 ---
 
-> Introduction to my developed deepctools toolbox for data-enabled predictive control.
-> 
-> Github project: [link](https://github.com/QiYuan-Zhang/DeePCtools) 
->
-> PyPI site: [link](https://pypi.org/project/deepctools/)
+> Introduction to how to upload your own package project to PyPI.
+
+> PyPI site: [link](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
 ---
 
-# DeePCtools
-A wrapped package for Data-enabled predictive control (DeePC) implementation. Including **DeePC** and **Robust DeePC** design with multiple objective functions.
+# I. Install required packages
 
-If you have questions, remarks, technical issues etc. feel free to use the issues page of this repository. I am looking forward to your feedback and the discussion.
-## I. How to use
+Required packages:
 
-This package operates within the Python framework.
-
-### 1. Required packages
-
-- Numpy
-- Matplotlib
-- CasADi &emsp; &emsp;     <-- 3 <= __version__ <= 4
-
-### 2. Usage
-
-- Download the [*deepctools*](https://github.com/QiYuan-Zhang/DeePCtools/tree/8dbc2458966214bf9885f4d622e20c3b840641e2/deepctools) file and save it to your project directory.
-
-- Or install using pip
+- pip
+- build: Generating distribution archives
+- twine: Uploading the distribution archives
 
 ```
-    pip install deepctools
-```
-Then you can use the deepctools in your python project.
-
-## II. deepctools toolbox organization
-```
-. 
-└── deeptools 
-    ├── hankel 
-    ├── deepctools 
-    │   ├── initialize_DeePCsolver
-    │   ├── initialize_RDeePCsolver
-    │   └── solver_step
-    ├── getCasadiFunc 
-    └── DiscreteSimulator
+    py -m pip install --upgrade pip
+    py -m pip install --upgrade build
+    py -m pip install --upgrade twine
 ```
 
-Under this file and function, there is detailed explanation of the usage, inputs, outputs of the functions. 
+# II. Creating the package files
 
-### 1. hankel
-
-Construct Hankel matrix of order L based on data x 
-
-- The data x: $x \in \mathbb{R}^{T, n_x}$
-- The Hankel matrix: $H_L(x) \in \mathbb{R}^{n_x  L \times T - L + 1}$
-
-### 2. deepctools
-
-Formulate and solve the DeePC problem, including **DeePC** and **Robust DeePC** design.
-
-Construct the nlp solver for DeePC using CasADi IPOPT sovler, only formulate the solver once at the first beginning. 
-
-In the online loop, no need to reformulate the NLP problem which saves lots of computational time.
-
-Each iteration, only need provide updated parameters: $u_{ini}$, $y_{ini}$.
-
-> Objective function: $J = \Vert y - y^r \Vert_Q^2 + \Vert u_{loss} \Vert_R^2 + \mathcal{o}(\sigma_y, g)$
-
-> $u_{loss}$ can be:
-
-```       
-        'u': u
-
-        'uus': u - u_ref
-
-        'du': delta u
-``` 
-
-There is a tutorial file in [`tutorial.py`](https://github.com/QiYuan-Zhang/DeePCtools/blob/8dbc2458966214bf9885f4d622e20c3b840641e2/tutorial.py).
-
-a. initialize_DeePCsolver(uloss, opts)  
-
-Formulate the DeePC design with different loss on control inputs.
-
-The optmization problem can be formulated as:
+Put your package files under `src/package_name/`.
 
 ```
-        Standard DeePC design:                        |            Equivalent expression
-     min J  =  || y - yref ||_Q^2 + || uloss ||_R^2   |   min J  =  || Uf*g - yref ||_Q^2 + || uloss ||_R^2
-         s.t.   [Up]       [uini]                     |      s.t.   Up * g = uini
-                [Yp] * g = [yini]                     |             Yp * g = yini
-                [Uf]       [ u  ]                     |             ulb <= u <= uub
-                [Yf]       [ y  ]                     |             ylb <= y <= yub
-                ulb <= u <= uub                       |
-                ylb <= y <= yub                       |  uloss = (u)   or    (u - uref)    or    (du)
+packaging_tutorial/
+├── LICENSE
+├── pyproject.toml
+├── README.md
+├── src/
+│   └── package_name/
+│       ├── __init__.py
+│       └── example.py
+└── tests/
 ```
 
+## 1. README.md
 
-b. initialize_RDeePCsolver
+Create a [README.md](https://guides.github.com/features/mastering-markdown) markdown file which will be shown in the PyPI package website.
 
-Formulate the Robust DeePC design with slack variables and different loss on control inputs.
+## 2. LICENSE
 
-The optmization problem can be formulated as:
+Create a license for your package. [link](https://choosealicense.com/)
 
-```
-              Robust DeePC design:                    |            Equivalent expression
-     min J  =  || y - yref ||_Q^2 + || uloss ||_R^2   |   min J  =  || Uf*g - ys ||_Q^2 + || uloss ||_R^2
-                 + lambda_y||sigma_y||_2^2            |             + lambda_y||Yp*g-yini||_2^2
-                 + lambda_g||g||_2^2                  |             + lambda_g||g||_2^2
-         s.t.   [Up]       [uini]     [   0   ]       |      s.t.   Up * g = uini
-                [Yp] * g = [yini]  +  [sigma_y]       |             ulb <= u <= uub
-                [Uf]       [ u  ]     [   0   ]       |             ylb <= y <= yub
-                [Yf]       [ y  ]     [   0   ]       |
-                ulb <= u <= uub                       |
-                ylb <= y <= yub                       |  uloss = (u)   or    (u - uref)    or    (du)
-```
+## 3. pyproject.toml
 
-c. solver_step
+The pyproject.toml tells build frontend tools like pip and build which backend to use for your project. [link](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#writing-pyproject-toml)
 
-Solve the optimization problem for one step, and output the optimized control inputs, operator g, and solving time.
-
-
-### 3. getCasadiFunc
-
-Construct the Function using CasADi
-
-### 4. DiscreteSimulator
-
-Construct the discrete system simulator for predicting next step
-
-## III. Tutorial 
-
-This is a tutorial example to illustrate how to use the *deepctools* to develop and implement DeePC design to different processes.
-
-### 1. Plant
-
-A simple discrete-time nonlinear model of polynomial single-input-single-output system is used: 
+An example:
 
 ```
-        y(t) = 4 * y(t-1) * u(t-1) - 0.5 * y(t-1) + 2 * u(t-1) * u(t) + u(t)
+    [build-system]
+    requires = ["hatchling"]
+    build-backend = "hatchling.build"
+
+    [project]
+    name = "spam-eggs"
+    version = "2020.0.0"
+    dependencies = [
+    "httpx",
+    "gidgethub[httpx]>4.0.0",
+    "django>2.1; os_name != 'nt'",
+    "django>2.0; os_name == 'nt'",
+    ]
+    requires-python = ">=3.8"
+    authors = [
+    {name = "Pradyun Gedam", email = "pradyun@example.com"},
+    {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
+    {name = "Another person"},
+    {email = "different.person@example.com"},
+    ]
+    maintainers = [
+    {name = "Brett Cannon", email = "brett@example.com"}
+    ]
+    description = "Lovely Spam! Wonderful Spam!"
+    readme = "README.rst"
+    license = {file = "LICENSE.txt"}
+    keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
+    classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+    ]
+
+    [project.optional-dependencies]
+    gui = ["PyQt5"]
+    cli = [
+    "rich",
+    "click",
+    ]
+
+    [project.urls]
+    Homepage = "https://example.com"
+    Documentation = "https://readthedocs.org"
+    Repository = "https://github.com/me/spam.git"
+    "Bug Tracker" = "https://github.com/me/spam/issues"
+    Changelog = "https://github.com/me/spam/blob/master/CHANGELOG.md"
+
+    [project.scripts]
+    spam-cli = "spam:main_cli"
+
+    [project.gui-scripts]
+    spam-gui = "spam:main_gui"
+
+    [project.entry-points."spam.magical"]
+    tomatoes = "spam:main_tomatoes"
 ```
 
-The model has been crafted as a `Plant` class to facilitate its utilization.
+# III. Generating distributions archives
 
-Notice:
+Run the following command under the directory where `pyproject.toml` is located:
 
-- This system is adopted from the [paper](https://ieeexplore.ieee.org/abstract/document/10319277).
-- Note this plant is a nonlinear model which do not satisfy the assumption of Fundamental Lemma, the control performance can be bad.
-- For your own project, you can replace this plant to your own system.
-
-
-### 2. DeePC designs
-
-Within the sample code, you have the option to specify either DeePC or Robust DeePC design, along with various objective functions. This segment is implemented within the `main` function.
-
-### 3. Tutorial results
-
-Feasible DeePC config: 
 ```
-     DeePC        |  {Tini:1, Np:5, T:5, uloss:uus}    | T merely influence the performance as long as T>=5 
-     Robust DeePC |  {Tini:1, Np:1, T:600, uloss:du}   | T will influence the steady-state loss 
-     Robust DeePC |  {Tini:1, Np:1, T:600, uloss:uus}  | T will influence the steady-state loss
-     Robust DeePC |  {Tini:1, Np:1, T:600, uloss:u}    | T will influence the steady-state loss
+    py -m build
 ```
 
-Figure of control peformance under first config:
-![peformance](https://github.com/QiYuan-Zhang/DeePCtools/assets/53491122/b662fe31-b2ee-43b2-9c38-98673b2ddfb1)
+This command should output a lot of text and once completed should generate two files in the dist directory:
+
+```
+    dist/
+    ├── example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+    └── example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+```
+
+# IV. Uploading the distribution archives
+ 
+## 1. Upload to TestPyPI 
+
+Upload to TestPyPI for testing and experimentation.
+
+- First register an account on [TestPyPI](https://test.pypi.org/account/register/).
+- Create a TestPyPI [API token](https://test.pypi.org/manage/account/#api-tokens), setting the “Scope” to “Entire account”.
+
+Then using the following commands to upload your packages:
+
+```
+    py -m twine upload --repository testpypi dist/*
+```
+
+You will be prompted for a username and password. For the username, use __token__. For the password, use the **token value**, including the pypi- prefix.
+
+After the command completes, you should see output similar to this:
+
+```
+    Uploading distributions to https://test.pypi.org/legacy/
+    Enter your username: __token__
+    Uploading example_package_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 kB • 00:01 • ?
+    Uploading example_package_YOUR_USERNAME_HERE-0.0.1.tar.gz
+    100% ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 kB • 00:00 • ?
+```
+
+Once uploaded, your package should be viewable on TestPyPI; for example: https://test.pypi.org/project/example_package_YOUR_USERNAME_HERE.
+
+## 2. Upload to PyPI
+
+When the package is ready, you can upload to PyPI instead TestPyPI.
+
+- First register an account on [PyPI](https://pypi.org ).
+- Create a TestPyPI [API token], setting the “Scope” to “Entire account”.
+
+Then using the following commands to upload your packages:
+
+```
+    twine upload dist/*
+```
+You will be prompted for a username and password. For the username, use __token__. For the password, use the **token value**, including the pypi- prefix.
+
+Once uploaded, your package should be viewable on PyPI.
 
 
-## License
 
-The project is released under the APACHE license. See [LICENSE](https://github.com/QiYuan-Zhang/DeePCtools/blob/8dbc2458966214bf9885f4d622e20c3b840641e2/LICENSE) for details.
-
-Copyright 2024 Xuewen Zhang
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
