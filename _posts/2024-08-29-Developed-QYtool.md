@@ -6,11 +6,7 @@ categories: My-toolbox
 comments: true
 ---
 
-
-# QYtool
-
 > A wrapped useful tool package designed for research purposes, tailored specifically for my own research needs.
-> Author: Xuewen Zhang
 >
 > Introduction: [link](https://github.com/QiYuan-Zhang/QYtool)
 > 
