@@ -55,13 +55,13 @@ Then you can use the deepctools in your python project.
 
 ## Version update
 
-#### **1.0.0**: initial commit
+- 1.0.0: initial commit
 
-#### 1.0.1 - 1.0.6: under development with name: `mytool`
+- 1.0.1 - 1.0.6: under development with name: `mytool`
 
-#### 1.0.7: published and changed name to `QYtool`
+- 1.0.7: published and changed name to `QYtool`
 
-#### 1.0.8: update README
+- 1.0.8: update README
 
 ## License
 
