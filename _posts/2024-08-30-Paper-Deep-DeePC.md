@@ -6,10 +6,10 @@ categories: Paper
 comments: true
 ---
 
-This project is the source code of paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338) by *X. Zhang, K. Zhang, Z. Li, and X. Yin*.
-
-The objective of this work is to learn the DeePC operator using a neural network and bypass the online optimization of conventional DeePC for efficient online implementation.
-
+>This project is the source code of paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338) by *X. Zhang, K. Zhang, Z. Li, and X. Yin*.
+>
+>The objective of this work is to learn the DeePC operator using a neural network and bypass the online optimization of conventional DeePC for efficient online implementation.
+>
 > If you are using this work in your research or teaching, please include explicit acknowledge of this work and of our paper.
 >
 > Please check the sections of [**License**](#license) and [**Citation**](#citation) at the end.
