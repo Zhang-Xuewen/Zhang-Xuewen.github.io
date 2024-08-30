@@ -15,6 +15,8 @@ permalink: /publication/
 
 - **Xuewen Zhang**, Minghao Han, Xunyuan Yin. Reduced-order Koopman modeling and predictive control of nonlinear processes. *Computers & Chemical Engineering*, 179:108440, 2023. [PDF](https://doi.org/10.1016/j.compchemeng.2023.108440) 
 
+- **Xuewen Zhang**, Kaixiang Zhang, Zhaojian Li, Xunyuan Yin. Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning. *arXiv preprint arXiv:2408.16338*, 2024. [PDF](https://arxiv.org/abs/2408.16338) 
+
 
 <h1> Conference talks</h1>
 

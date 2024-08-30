@@ -6,7 +6,7 @@ categories: Paper
 comments: true
 ---
 
->This project is the source code of paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338) by *X. Zhang, K. Zhang, Z. Li, and X. Yin*.
+>This project is the source code of paper [Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning](https://arxiv.org/abs/2408.16338) by *X. Zhang, K. Zhang, Z. Li, and X. Yin*.
 >
 >The objective of this work is to learn the DeePC operator using a neural network and bypass the online optimization of conventional DeePC for efficient online implementation.
 >
@@ -17,6 +17,7 @@ comments: true
 > Paper：[link](https://arxiv.org/abs/2408.16338)
 >
 > Source code: [link](https://github.com/QiYuan-Zhang/Deep-DeePC)
+
 ---
 
 
@@ -51,7 +52,7 @@ For example:
 ```
 
 - Figure of generating set-points:
-![gen_sp](./_data/README_fig/gen_sp.png)
+![gen_sp](https://github.com/user-attachments/assets/058b2c5f-4bca-4629-9a10-6d9d7ccc32cb)
 
 
 #### b. To train and test the model:
@@ -68,15 +69,15 @@ For example:
 - The training process will automatically generate a new folder with a new trial number and save all related data and figures in this path: `./_results/system/new trial number`.
 
 - First test the conventional DeePC performance based on current parameters.
-![train_1](./_data/README_fig/train_1.png)
+![train_1](https://github.com/user-attachments/assets/7e3ca4d9-b8f2-4e0c-a986-2daaf462d11f)
 
 - Next start the training process.
-![train_2](./_data/README_fig/train_2.png)
-![train_3](./_data/README_fig/train_3.png)
+![train_2](https://github.com/user-attachments/assets/2602af3d-7117-4240-b965-5d7771433ab9)
+![train_3](https://github.com/user-attachments/assets/bd5aeb50-037f-4d01-97d2-8608b231a019)
 
 - After training, start the test process for Deep DeePC and constrained Deep DeePC.
-![train_2](./_data/README_fig/test_1.png)
-![train_2](./_data/README_fig/test_1.png)
+![test_1](https://github.com/user-attachments/assets/bef7ea32-8758-4822-8b43-6ba248436c70)
+![test_2](https://github.com/user-attachments/assets/447ff2bc-2287-4321-9b08-3bc74fd2a43f)
 
 
 
@@ -132,16 +133,16 @@ Additionally, two toolboxes are used which are developed by myself:
 
 ### 1. Training data construction
 
-![Data_process](https://github.com/QiYuan-Zhang/Deep-DeePC/blob/main/_data/README_fig/Data_process.svg)
+![Data_process](https://github.com/user-attachments/assets/11bdf6e7-8fc0-41c4-a786-3b80f2296e2c)
 
-Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
+Figure from our paper [Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
 
 
 ### 2. Offline training 
 
-![Architecture](https://github.com/QiYuan-Zhang/Deep-DeePC/blob/main/_data/README_fig/Architecture.svg)
+![Architecture](https://github.com/user-attachments/assets/f79d9850-20fb-487f-ae5a-1ca753fc9268)
 
-Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
+Figure from our paper [Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
 
 - Neural network: $\hat{g} = F_{\theta}(\mathbf{u}_{ini}, \mathbf{y}_{ini}, e_u, e_y | \theta)$ 
 
@@ -151,9 +152,9 @@ Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or
 
 ### 3. Constrainted Deep DeePC for online implementation
 
-![Constraint_handling](https://github.com/QiYuan-Zhang/Deep-DeePC/blob/main/_data/README_fig/Constraint_handling.svg)
+![Constraint_handling](https://github.com/user-attachments/assets/6cee4709-31ae-4821-9b3e-2f229c8428d2)
 
-Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
+Figure from our paper [Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
 
 - When predicted trajectories $\hat{\mathbf{u}}_k = U_f \hat{g}_k, \ \hat{\mathbf{y}}_k = Y_f \hat{g}_k$ violate constraints, solve the following optimization problem:
 
@@ -168,8 +169,8 @@ Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or
 
 ## IV. Case study on chemical process
 
-![Reactor-separator](https://github.com/QiYuan-Zhang/Deep-DeePC/blob/main/_data/README_fig/Reactor-separator.svg)
-Figure from our paper [**Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning**](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
+![Reactor-separator](https://github.com/user-attachments/assets/2fffd6e5-d10d-48ed-b273-a316299568ce)
+Figure from our paper [Deep DeePC: Data-enabled predictive control with low or no online optimization using deep learning](https://arxiv.org/abs/2408.16338). Please refer to the paper for more details.
 
 
 ## Acknowledgment
