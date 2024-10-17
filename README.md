@@ -1,4 +1,4 @@
-# [QiYuan's Web](https://qiyuan-zhang.github.io)
+# [QiYuan's Web](https://Zhang-Xuewen.github.io)
 
 This project is to construct my own GitHub website.
 
