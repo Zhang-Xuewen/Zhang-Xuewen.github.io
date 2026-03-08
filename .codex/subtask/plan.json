@@ -56,7 +56,7 @@
       "id": "003",
       "slug": "create-content-templates",
       "title": "Create reusable content templates for each collection type",
-      "status": "doing",
+      "status": "done",
       "depends_on": [
         "001",
         "002"
@@ -87,7 +87,7 @@
       "id": "004",
       "slug": "create-qyweb-skill",
       "title": "Create QiYuan Web editing skill for Claude and Codex",
-      "status": "todo",
+      "status": "doing",
       "depends_on": [
         "001",
         "002",
@@ -111,7 +111,8 @@
         "/Users/qy/.codex/skills/skill_qyweb_editing.md",
         "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md"
       ],
-      "order_reason": "Depends on all prior subtasks (001 conventions, 002 validation, 003 templates) to consolidate complete site knowledge into a reusable skill. Human instruction: skill must be created and placed in Claude, Codex, and backup skill folders."
+      "order_reason": "Depends on all prior subtasks (001 conventions, 002 validation, 003 templates) to consolidate complete site knowledge into a reusable skill. Human instruction: skill must be created and placed in Claude, Codex, and backup skill folders.",
+      "iterations": 1
     }
   ]
 }

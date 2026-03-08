@@ -1,0 +1,40 @@
+{
+  "artifacts": [
+    {
+      "path": ".codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md",
+      "type": "document",
+      "description": "Primary self-contained QiYuan Web editing skill file covering conventions, procedures, templates, validation, pitfalls, and examples.",
+      "verify_hint": "Read content and check structure, completeness, quality"
+    },
+    {
+      "path": "/Users/qy/.claude/skills/skill_qyweb_editing.md",
+      "type": "document",
+      "description": "Deployed Claude Code copy of the skill file.",
+      "verify_hint": "Compare checksum/diff against subtask working copy"
+    },
+    {
+      "path": "/Users/qy/.codex/skills/skill_qyweb_editing.md",
+      "type": "document",
+      "description": "Deployed Codex skills-folder copy of the skill file.",
+      "verify_hint": "Compare checksum/diff against subtask working copy"
+    },
+    {
+      "path": "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md",
+      "type": "document",
+      "description": "Deployed workflow backup copy of the skill file.",
+      "verify_hint": "Compare checksum/diff against subtask working copy"
+    },
+    {
+      "path": ".codex/subtask/004_create-qyweb-skill/result.md",
+      "type": "document",
+      "description": "Execution report for subtask 004 with actions, evidence, acceptance checks, and status.",
+      "verify_hint": "Read content and check structure, completeness, quality"
+    },
+    {
+      "path": ".codex/subtask/004_create-qyweb-skill/output_manifest.json",
+      "type": "config",
+      "description": "Artifact manifest listing all subtask outputs for reviewer verification.",
+      "verify_hint": "Validate syntax and required fields"
+    }
+  ]
+}
