@@ -12,5 +12,5 @@
 __pycache__/
 _site/
 .jekyll-cache/
-
+.codex/
 

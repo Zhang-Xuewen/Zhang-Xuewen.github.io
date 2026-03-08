@@ -87,7 +87,7 @@
       "id": "004",
       "slug": "create-qyweb-skill",
       "title": "Create QiYuan Web editing skill for Claude and Codex",
-      "status": "doing",
+      "status": "done",
       "depends_on": [
         "001",
         "002",
