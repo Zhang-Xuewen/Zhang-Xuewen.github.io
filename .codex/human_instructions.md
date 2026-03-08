@@ -21,3 +21,10 @@
 ### Human instructions
 - I have add ignore .codex folder in the git commit, now remove the .codex file in the git, not commit the changes of these files in the future commit of the project, in this case, if not changes apart from the .codex file, no need to commit
 - the generate skill is not right, use the skill skill_creator to generate, need to follow the skill format and give example/templates, like the other skill, also need to create a separate skill folder for this created skill
+
+---
+
+## Human Instruction · 2026-03-09 01:08
+
+### Human instructions
+- put your generated template file into the created skill folder with a new subfolder named "references" like the skill folder: /Users/qy/.codex/skills/imagegen

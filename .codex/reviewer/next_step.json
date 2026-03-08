@@ -1,32 +1,22 @@
 {
   "decision": "done",
   "current_subtask": "004_create-qyweb-skill",
-  "summary": "Revision 2 of subtask 004 successfully migrated the QiYuan Web editing skill from standalone file format (skill_qyweb_editing.md) to folder-based format (qyweb_editing/SKILL.md) with YAML frontmatter. All 4 copies are byte-identical (SHA256: 15fccfc9...). Old standalone files confirmed removed from all 3 external locations. SKILL.md has correct YAML frontmatter (name: qyweb-editing, description: ...), 418 lines of comprehensive content covering all 5 collections, and follows the same folder structure as the reference paper_writing skill. No site files were modified. All subtasks 001-004 are now complete — the project is DONE.",
+  "summary": "Processed human instruction (2026-03-09T04:30) about qyweb_editing skill not triggering. Investigated and applied 4 fixes directly: (1) Changed YAML name field from 'qyweb-editing' to 'qyweb_editing' to match folder name, (2) Quoted description in YAML frontmatter for proper YAML parsing, (3) Added qyweb_editing entry to SKILL_INDEX.md for Codex discovery, (4) Created project-level CLAUDE.md in QiYuan's Web repo to hint Claude Code toward the skill when working in this project. All 4 deployed SKILL.md copies are byte-identical (SHA256: d4326ccc...). plan.json updated to iteration 4.",
   "evidence": [
-    "YAML frontmatter verified: lines 1-4 contain --- delimiters with name: qyweb-editing and description field",
-    "All 4 copies byte-identical: SHA256 15fccfc99763f203209499d93bd1724122b1bb019f39b02bb5369e7325ece242 across working copy, ~/.claude/skills/, ~/.codex/skills/, and workflow backup",
-    "Old standalone files confirmed removed: ls on all 3 paths returns 'No such file or directory'",
-    "Skill structure matches reference (paper_writing/SKILL.md): YAML frontmatter → # heading → ## Purpose → ## When to Use → ... sections",
-    "Content completeness: 10 step-by-step procedures (5 collection create + update existing + static pages + navigation + pre-commit validation + site overview)",
-    "All 5 inline templates present: _posts, _blogs, _figs, _shots, _vlogs with correct front matter and body patterns",
-    "Additional sections present: Conventions Quick-Reference, Common Pitfalls, 3 Examples",
-    "git status --short returns empty — no site files modified",
-    "File is 418 lines — substantive content, not shallow"
+    "All 4 SKILL.md copies byte-identical: SHA256 d4326ccc6842d46f38286852a0dd3bae3afedc1234de201e324d713b7d8dd9ce",
+    "YAML name field changed: qyweb-editing → qyweb_editing (matches folder name)",
+    "YAML description now properly quoted for parsing",
+    "SKILL_INDEX.md updated with qyweb_editing entry",
+    "CLAUDE.md created at project root referencing qyweb_editing skill for content operations",
+    "Skill confirmed visible in Claude Code skill list with full trigger description"
   ],
   "issues_found": [],
-  "acceptance_check": [
-    {"criterion": "Skill is organized as folder qyweb_editing/ containing SKILL.md", "result": "PASS", "detail": "qyweb_editing/SKILL.md exists at .codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md"},
-    {"criterion": "SKILL.md has YAML frontmatter with name and description", "result": "PASS", "detail": "Lines 1-4: name: qyweb-editing, description: Create, update, and manage content..."},
-    {"criterion": "Skill content is complete and self-contained (all 5 collections)", "result": "PASS", "detail": "Sections 2-6 cover _posts, _blogs, _figs, _shots, _vlogs with step-by-step procedures; 5 inline templates included"},
-    {"criterion": "Skill deployed as folders to all 3 external locations", "result": "PASS", "detail": "SHA256 identical across all 4 paths"},
-    {"criterion": "Old standalone files removed from all 3 external locations", "result": "PASS", "detail": "All 3 old paths return 'No such file or directory'"},
-    {"criterion": "Skill content verified against site-conventions.md", "result": "PASS", "detail": "Carried forward from iteration 1 review — content unchanged, only format migrated"}
-  ],
   "next_subtask": null,
   "subtask_agents_path": null,
   "stop_conditions": [
     "All 4 subtasks (001-004) have passed review",
-    "Project objective achieved: reusable skill file deployed in correct folder format to all target locations",
-    "No remaining subtasks in plan.json"
-  ]
+    "Human instruction about skill triggering has been addressed with direct fixes",
+    "Project is DONE pending user verification that skill triggers in new conversations"
+  ],
+  "next_human_action": "Test the skill by starting a new Claude Code conversation in the QiYuan's Web project and asking to 'create a new post'. The CLAUDE.md file should prompt Claude to check the qyweb_editing skill. If it still doesn't trigger, consider running skill-creator evals to optimize the description."
 }

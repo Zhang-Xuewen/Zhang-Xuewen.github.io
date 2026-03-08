@@ -87,7 +87,7 @@
       "id": "004",
       "slug": "create-qyweb-skill",
       "title": "Create QiYuan Web editing skill for Claude and Codex",
-      "status": "revise",
+      "status": "done",
       "depends_on": [
         "001",
         "002",
@@ -113,8 +113,8 @@
         "/Users/qy/.codex/skills/qyweb_editing/SKILL.md",
         "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md"
       ],
-      "order_reason": "REVISE: Human instruction says skill format is wrong. Must use skill-creator folder format (qyweb_editing/SKILL.md with YAML frontmatter), not a standalone .md file. Must create a separate skill folder. Must follow the same format as other skills like paper_writing, pdf, etc.",
-      "iterations": 3
+      "order_reason": "REVISE 3: Human instruction says skill not triggering. Fixed: (1) changed YAML name field from qyweb-editing to qyweb_editing to match folder name, (2) quoted description in YAML frontmatter for proper parsing, (3) added qyweb_editing to SKILL_INDEX.md for Codex discovery, (4) created project-level CLAUDE.md in QiYuan's Web repo to hint Claude Code to use qyweb_editing skill when working in this project. All 4 deployed copies updated and verified byte-identical.",
+      "iterations": 4
     }
   ]
 }
