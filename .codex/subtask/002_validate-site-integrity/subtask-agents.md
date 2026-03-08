@@ -15,6 +15,35 @@ Then read the following files in order:
 2. `.codex/subtask/002_validate-site-integrity/subtask-agents.md` — this file
 3. `.codex/subtask/001_audit-site-conventions/site-conventions.md` — the conventions reference (your validation baseline)
 4. `.codex/subtask_activity.md` — prior activity context
+5. `.codex/reviewer/next_step.json` — reviewer instructions including merge prerequisite
+
+## Step 0: MANDATORY — Merge origin/main (Human Instruction)
+
+**This step MUST be completed before any validation work begins.**
+
+The human has instructed that origin/main must be merged into the local branch first. The local branch has diverged from origin/main:
+- **Local-only commits** (4): workflow artifacts from Claude/Codex (a6cb1f7, 94dabb2, 51ca943, bed00a1)
+- **Remote-only commits** (6): GitHub web edits — README.md, social.yml, index.html (011c69f, b3b0541, 22d5667, bdd74b0, 7b2ae63, a6f2c2d)
+- **Merge base**: c30f7bd
+
+Execute these commands in order:
+
+```bash
+git fetch origin
+git merge origin/main --no-edit
+```
+
+**If merge conflicts occur:**
+- `.codex/` directory: keep LOCAL version (these are workflow artifacts not on remote)
+- Site content files (README.md, social.yml, index.html, etc.): accept REMOTE version (these are the human's edits via GitHub)
+- After resolving, run `git add .` and `git commit --no-edit` to complete the merge
+
+**After merge succeeds:**
+- Run `git status` to confirm clean working tree
+- Run `git log --oneline -10` to confirm merge commit is present
+- Commit any remaining staged changes if needed
+
+**Only proceed to Step 1 after the merge is fully complete.**
 
 ## Step-by-Step Execution Plan
 

@@ -7,7 +7,7 @@
       "id": "001",
       "slug": "audit-site-conventions",
       "title": "Audit site structure and document conventions reference",
-      "status": "doing",
+      "status": "done",
       "depends_on": [],
       "dir": ".codex/subtask/001_audit-site-conventions",
       "acceptance": {
