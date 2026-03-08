@@ -74,6 +74,32 @@
         ".codex/subtask/003_create-content-templates/templates/quick-reference.md"
       ],
       "order_reason": "Depends on both 001 (conventions) and 002 (validated patterns) to ensure templates are based on correct, working conventions."
+    },
+    {
+      "id": "004",
+      "slug": "create-qyweb-skill",
+      "title": "Create QiYuan Web editing skill for Claude and Codex",
+      "status": "todo",
+      "depends_on": ["001", "002", "003"],
+      "dir": ".codex/subtask/004_create-qyweb-skill",
+      "acceptance": {
+        "artifact_quality": [
+          "Skill file is a complete, self-contained guide for creating, updating, and managing QiYuan website content (posts, blogs, figs, shots, vlogs, and main page)",
+          "Skill consolidates conventions from subtask 001, validation findings from 002, and templates from 003 into actionable instructions",
+          "Skill covers front matter conventions, naming patterns, asset paths, category rules, layout assignments, and content structure for every collection type",
+          "Skill includes step-by-step procedures for common operations: create new post, update existing page, add images, embed videos, modify sidebar/navigation",
+          "Skill is deployed to all 3 required locations: /Users/qy/.claude, /Users/qy/.codex/skills, and the backup workflow settings path",
+          "Skill follows the standard skill file format with Purpose, Triggers, Step-by-Step Procedure, Do/Don't, and Examples sections"
+        ],
+        "verification": "Verify skill file exists in all 3 target locations. Confirm skill content accurately references site conventions by cross-checking against site-conventions.md. Test that Claude Code can invoke the skill by name."
+      },
+      "artifacts": [
+        ".codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md",
+        "/Users/qy/.claude/skills/skill_qyweb_editing.md",
+        "/Users/qy/.codex/skills/skill_qyweb_editing.md",
+        "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md"
+      ],
+      "order_reason": "Depends on all prior subtasks (001 conventions, 002 validation, 003 templates) to consolidate complete site knowledge into a reusable skill. Human instruction: skill must be created and placed in Claude, Codex, and backup skill folders."
     }
   ]
 }
