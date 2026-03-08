@@ -7,7 +7,7 @@
       "id": "001",
       "slug": "audit-site-conventions",
       "title": "Audit site structure and document conventions reference",
-      "status": "todo",
+      "status": "doing",
       "depends_on": [],
       "dir": ".codex/subtask/001_audit-site-conventions",
       "acceptance": {
@@ -17,21 +17,24 @@
           "Reference documents the site navigation structure, sidebar links, and page hierarchy accurately",
           "Reference captures the inline HTML title styling convention (e.g., <span style='color:#e32724'>) used in post titles",
           "Reference includes image asset path conventions for each collection (public/fig_post/, public/shots/, etc.)",
-          "All information in the reference is verified against actual site files — no fabricated or assumed details"
+          "All information in the reference is verified against actual site files \u2014 no fabricated or assumed details"
         ],
         "verification": "Cross-check at least 3 documented conventions against actual site files to confirm accuracy. Verify that front matter examples match real posts."
       },
       "artifacts": [
         ".codex/subtask/001_audit-site-conventions/site-conventions.md"
       ],
-      "order_reason": "Must document existing conventions before validating integrity or creating templates, so all downstream tasks have an accurate reference."
+      "order_reason": "Must document existing conventions before validating integrity or creating templates, so all downstream tasks have an accurate reference.",
+      "iterations": 1
     },
     {
       "id": "002",
       "slug": "validate-site-integrity",
       "title": "Validate site content integrity and build readiness",
       "status": "todo",
-      "depends_on": ["001"],
+      "depends_on": [
+        "001"
+      ],
       "dir": ".codex/subtask/002_validate-site-integrity",
       "acceptance": {
         "artifact_quality": [
@@ -53,11 +56,14 @@
       "slug": "create-content-templates",
       "title": "Create reusable content templates for each collection type",
       "status": "todo",
-      "depends_on": ["001", "002"],
+      "depends_on": [
+        "001",
+        "002"
+      ],
       "dir": ".codex/subtask/003_create-content-templates",
       "acceptance": {
         "artifact_quality": [
-          "One template file per collection type: post, blog, fig, shot, vlog — each with correct layout, front matter fields, and placeholder content",
+          "One template file per collection type: post, blog, fig, shot, vlog \u2014 each with correct layout, front matter fields, and placeholder content",
           "Templates use the exact front matter field names, ordering, and formatting found in existing site content",
           "Each template includes inline comments or placeholders guiding the user on what to fill in (title, date, categories, image paths)",
           "Templates follow the YYYY-MM-DD-Slug.md naming convention with a clear naming instruction",
@@ -80,7 +86,11 @@
       "slug": "create-qyweb-skill",
       "title": "Create QiYuan Web editing skill for Claude and Codex",
       "status": "todo",
-      "depends_on": ["001", "002", "003"],
+      "depends_on": [
+        "001",
+        "002",
+        "003"
+      ],
       "dir": ".codex/subtask/004_create-qyweb-skill",
       "acceptance": {
         "artifact_quality": [

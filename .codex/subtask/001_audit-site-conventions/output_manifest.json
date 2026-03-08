@@ -1,0 +1,22 @@
+{
+  "artifacts": [
+    {
+      "path": ".codex/subtask/001_audit-site-conventions/site-conventions.md",
+      "type": "document",
+      "description": "Comprehensive audited reference of site architecture, content conventions, categories/tags, layout hierarchy, navigation, assets, and writing style for QiYuan's Web.",
+      "verify_hint": "Read content and check structure, completeness, and that examples/citations match actual source files."
+    },
+    {
+      "path": ".codex/subtask/001_audit-site-conventions/result.md",
+      "type": "document",
+      "description": "Execution report listing actions, commands, changed files, evidence, acceptance checks, and blockers for subtask 001.",
+      "verify_hint": "Read content and confirm command log, acceptance statuses, and evidence align with generated outputs."
+    },
+    {
+      "path": ".codex/subtask/001_audit-site-conventions/output_manifest.json",
+      "type": "config",
+      "description": "Artifact manifest for reviewer tooling to locate and verify subtask outputs.",
+      "verify_hint": "Validate JSON syntax and confirm all created subtask artifacts are listed with accurate metadata."
+    }
+  ]
+}
