@@ -221,3 +221,100 @@
 - **Next**
   - Subtask 002 complete and passed review.
   - Proceed to subtask `003_create-content-templates` — Codex will create 5 collection templates and a quick-reference guide based on verified conventions.
+
+---
+
+# 📋 Summary · 2026-03-09 01:15 · by QYFlow
+
+## 📌 Subtask Brief
+
+- **Subtask**: `003_create-content-templates` — Create Reusable Content Templates for Each Collection Type
+- **Iteration**: 0 previous attempt(s)
+- **Objective**:
+  - Create ready-to-use Markdown template files for each of the site's 5 content types (post, blog, fig, shot, vlog), plus a quick-reference guide.
+  - Templates must precisely follow the conventions documented in subtask 001 (`site-conventions.md`) and validated in subtask 002 (`validation-report.md`).
+  - Each template must include correct front matter, body structure patterns, and inline HTML guidance comments.
+  - The quick-reference guide must cover when to use each collection, filename patterns, front matter fields, asset paths, category naming, and common pitfalls.
+
+
+## 🧠 Claude
+
+- **Role**: Reviewer
+- **Decision**: PASS
+
+- **Summary**
+    1. Codex created all 6 required output files: 5 collection-specific templates (`post-template.md`, `blog-template.md`, `fig-template.md`, `shot-template.md`, `vlog-template.md`) and a `quick-reference.md` guide.
+    2. Reviewer independently verified every template against its corresponding real content file:
+        - All 5 templates have valid YAML front matter with fields in the exact order (layout, title, date, categories, comments) matching existing content.
+        - Template body structures faithfully reproduce real content patterns — posts use blockquote→separator→sectioned headings with code/math examples, figs/shots use `<div class="gallery">` with Liquid-prefixed `<img>` tags, vlogs use Bilibili iframe in `<div class="video">` wrapper.
+        - All templates include the required HTML guidance comments (filename instruction, category guidance, asset path guidance).
+    3. The quick-reference guide contains all 6 required sections with accurate content matching the conventions from subtasks 001 and 002.
+    4. No site files were modified. The temporary test post (`_posts/2099-01-01-Template-Test.md`) was properly cleaned up.
+    5. Jekyll build verification could not complete due to the same Bundler 2.5.7 environment mismatch documented in subtask 002 — this is a known environment limitation, not a template defect.
+    6. Two minor (non-blocking) issues noted:
+        (1) Jekyll build failed (environment issue, same as subtask 002).
+        (2) Vlog template iframe not indented inside `<div class="video">`, while real vlog file indents it — purely cosmetic.
+
+- **Evidence / Criteria**
+    - `[x]` One template per collection type with correct layout and front matter fields — 5 templates verified with Python YAML validation, all PASS with correct layout values (post, blog, fig, shot, vlog)
+    - `[x]` Templates use exact field names, ordering, and formatting from existing content — field order layout→title→date→categories→comments confirmed identical to real posts via cross-check against `_posts/2024-08-29-Developed-QYtool.md`, `_blogs/2024-04-05-DeePC-WWTPs.md`, `_figs/2024-03-29-Logo.md`, `_shots/2023-03-23-Daily-life.md`, `_vlogs/2024-01-02-Bye-Bye-2023.md`
+    - `[x]` Each template includes guiding comments/placeholders — all 5 templates have HTML comments for save-as filename, known categories, and asset path guidance
+    - `[x]` Templates follow YYYY-MM-DD-Slug.md naming convention with instructions — each template's first comment reads `<!-- Save as: YYYY-MM-DD-Your-Title.md in _<collection>/ -->`
+    - `[x]` Quick-reference guide covers when to use each collection and key conventions — 6 sections present (collection usage, filename patterns, front matter table, asset paths, category naming, common pitfalls)
+    - `[x]` No existing site files modified — git diff confirmed only `.codex/` files changed
+    - `[x]` Temporary test post properly cleaned up — `_posts/2099-01-01-Template-Test.md` does not exist
+    - `[x]` All 9 output artifacts present with substantive content (5 templates, quick-reference, jekyll-build.log, result.md, output_manifest.json)
+
+- **Commit**
+    - "update - codex - execute subtask 003_create-content-templates" (commit 05d85a3, already on main)
+
+- **Next**
+    - Subtask 003 passed review. Proceed to Codex execution of subtask `004_create-qyweb-skill`.
+    - Codex should read `site-conventions.md`, `validation-report.md`, and all template files from subtask 003, then consolidate into a single reusable skill file.
+    - `subtask-agents.md` for subtask 004 already exists with detailed instructions.
+    - The skill must be deployed to 4 locations: subtask dir, `/Users/qy/.claude/skills/`, `/Users/qy/.codex/skills/`, and the backup workflow settings path.
+
+
+### 🚀 Codex (Executor)
+
+- **Actions Taken**:
+  - Read all prerequisite documents: `site-conventions.md` (subtask 001), `validation-report.md` (subtask 002), and 6 real content example files across all 5 collections.
+  - Created output directory `.codex/subtask/003_create-content-templates/templates/`.
+  - Created 5 collection-specific templates: `post-template.md`, `blog-template.md`, `fig-template.md`, `shot-template.md`, `vlog-template.md` — each with correct front matter, body structure, and inline guidance comments.
+  - Created `quick-reference.md` with 6 sections covering collection usage, filename patterns, front matter fields, asset paths, category naming, and common pitfalls.
+  - Ran Python YAML validation on all 5 templates — all passed with correct layout values and field ordering.
+  - Attempted Jekyll build verification with a temporary test post (`_posts/2099-01-01-Template-Test.md`) — build failed due to Bundler 2.5.7 environment mismatch (same as subtask 002). Test post was immediately removed.
+  - Generated `result.md` execution report and `output_manifest.json` artifact manifest.
+
+- **Why**:
+  - Templates are the practical deliverable enabling future content creation — they encode all conventions from subtask 001 into directly usable starter files.
+  - Each template was modeled after a real content file in its collection to ensure exact convention fidelity (front matter order, body patterns, HTML structures, Liquid syntax).
+  - The quick-reference guide provides a single-page summary for quick lookups during content creation.
+
+- **Changed Files**:
+  - `.codex/subtask/003_create-content-templates/templates/post-template.md` — created, post template with code/math/image examples
+  - `.codex/subtask/003_create-content-templates/templates/blog-template.md` — created, blog template with project update structure
+  - `.codex/subtask/003_create-content-templates/templates/fig-template.md` — created, fig template with gallery HTML and Liquid image paths
+  - `.codex/subtask/003_create-content-templates/templates/shot-template.md` — created, shot template with gallery HTML and shots asset paths
+  - `.codex/subtask/003_create-content-templates/templates/vlog-template.md` — created, vlog template with Bilibili iframe embed pattern
+  - `.codex/subtask/003_create-content-templates/templates/quick-reference.md` — created, 6-section quick-reference guide
+  - `.codex/subtask/003_create-content-templates/jekyll-build.log` — created, build verification output
+  - `.codex/subtask/003_create-content-templates/result.md` — created, execution report
+  - `.codex/subtask/003_create-content-templates/output_manifest.json` — created, artifact manifest
+  - `.codex/state.json` — modified, updated current_subtask to "003"
+  - `.codex/subtask/plan.json` — modified, updated subtask 003 status to "doing"
+
+- **Summary**
+  - Codex successfully created all 6 required output files with accurate convention fidelity.
+  - All 5 templates have valid YAML front matter with the exact field order (layout, title, date, categories, comments) observed in existing content files across all collections.
+  - Template body structures accurately reproduce collection-specific patterns: post/blog use sectioned headings with code/math examples and blockquote excerpts; fig/shot use `<div class="gallery">` with `<h1>`/`<img>` tags and `{{ '/' | relative_url }}` Liquid prefix; vlog uses Bilibili link + `<div class="video">` iframe wrapper.
+  - All templates include HTML guidance comments for filename conventions, known categories, and asset path patterns.
+  - The quick-reference guide covers all 6 required topics with accurate, actionable content.
+  - No site files were modified. The temporary test post was properly created and removed during build verification.
+
+- **Commit**
+  - "update - codex - execute subtask 003_create-content-templates" (commit 05d85a3)
+
+- **Next**
+  - Subtask 003 complete and passed review.
+  - Proceed to subtask `004_create-qyweb-skill` — Codex will consolidate conventions, validation findings, and templates into a single reusable skill file deployed to 4 locations.
