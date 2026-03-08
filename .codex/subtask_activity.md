@@ -408,3 +408,87 @@
   - Subtask 004 complete and passed review.
   - All subtasks (001–004) are done. Project workflow is complete.
   - The skill file is ready for use in future QiYuan's Web content operations.
+
+---
+
+# 📋 Summary · 2026-03-09 03:30 · by QYFlow
+
+## 📌 Subtask Brief
+
+- **Subtask**: `004_create-qyweb-skill` — Create QiYuan Web Editing Skill for Claude and Codex (REVISION 2)
+- **Iteration**: 2 previous attempt(s)
+- **Objective**:
+  - Restructure the QiYuan Web editing skill from standalone `skill_qyweb_editing.md` format into the correct folder-based skill format (`qyweb_editing/SKILL.md` with YAML frontmatter).
+  - Deploy the restructured skill to all 4 target locations and remove old standalone files from 3 external locations.
+  - The skill content from iteration 1 was already validated as correct — only the format/structure needed to change to match other skills like `paper_writing/SKILL.md`.
+  - This is the final subtask in the project; successful completion means the entire 4-subtask workflow is done.
+
+
+## 🧠 Claude
+
+- **Role**: Reviewer
+- **Decision**: PASS → PROJECT DONE
+
+- **Summary**
+    1. Codex successfully migrated the skill from standalone file format (`skill_qyweb_editing.md`) to folder-based format (`qyweb_editing/SKILL.md`) with proper YAML frontmatter containing `name: qyweb-editing` and a descriptive `description` field.
+    2. All 4 deployed copies are byte-identical (SHA256: `15fccfc99763f203209499d93bd1724122b1bb019f39b02bb5369e7325ece242`), confirming consistent deployment across the working copy, Claude Code skills, Codex skills, and the workflow backup location.
+    3. All 3 old standalone `skill_qyweb_editing.md` files were confirmed removed from `~/.claude/skills/`, `~/.codex/skills/`, and the workflow backup path.
+    4. The 418-line SKILL.md preserves all content from iteration 1: 10 step-by-step procedures (5 collection create + update existing + static pages + navigation + pre-commit validation + site overview), 5 inline templates, conventions quick-reference, common pitfalls, and 3 concrete examples.
+    5. Folder structure matches the reference skill (`paper_writing/SKILL.md`): YAML frontmatter → `# heading` → `## Purpose` → sequential sections.
+    6. No site files were modified — `git status --short` returns empty.
+    7. All 6 acceptance criteria passed. No blocking or minor issues found.
+
+- **Evidence / Criteria**
+    - `[x]` Skill is organized as folder `qyweb_editing/` containing `SKILL.md` — verified at `.codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md`
+    - `[x]` `SKILL.md` has YAML frontmatter with `name` and `description` fields — verified lines 1-4 contain valid frontmatter
+    - `[x]` Skill content is complete and self-contained (all 5 collection types, procedures, templates, examples) — 418 lines with 10 procedures, 5 templates, conventions table, pitfalls, 3 examples
+    - `[x]` Skill deployed as folders to all 3 external target locations — SHA256 identical across all 4 paths
+    - `[x]` Old standalone `skill_qyweb_editing.md` files removed from all 3 external locations — `ls` confirms "No such file or directory" for all 3 paths
+    - `[x]` Skill content verified against `site-conventions.md` for accuracy — carried forward from iteration 1 review (content unchanged, only format migrated)
+
+- **Commit**
+    - No commits made by reviewer — review-only phase.
+
+- **Next**
+    - All 4 subtasks (001–004) have passed review. The project is DONE.
+    - The reusable skill file `qyweb_editing/SKILL.md` is deployed and operational in Claude Code skills, Codex skills, and the backup workflow settings path.
+    - Any future content operations on QiYuan's Web can leverage this skill for consistent, convention-accurate editing.
+
+
+### 🚀 Codex (Executor)
+
+- **Actions Taken**:
+  - Read all prerequisite files: task metadata, subtask instructions, prior activity, upstream artifacts (site-conventions.md, validation-report.md, templates), and the reference skill (`paper_writing/SKILL.md`) for correct folder format.
+  - Created `qyweb_editing/` directories at all 4 target locations.
+  - Generated `SKILL.md` by prepending required YAML frontmatter (`name: qyweb-editing`, `description: ...`) to the validated skill content from iteration 1.
+  - Removed old standalone `skill_qyweb_editing.md` from all 3 external deployment locations (`~/.claude/skills/`, `~/.codex/skills/`, workflow backup).
+  - Deployed identical `SKILL.md` copies to all 3 external locations via `cp`.
+  - Verified deployment integrity using `sha256sum` and `diff -q` across all 4 copies.
+  - Confirmed no site files modified via `git status --short`.
+
+- **Why**:
+  - Human instruction required the skill to follow the standard folder-based format (`qyweb_editing/SKILL.md` with YAML frontmatter) used by other skills, rather than the standalone `.md` file format from iteration 1.
+  - Content was already validated in iteration 1 — only the packaging/structure needed to change, so Codex correctly reused the existing content rather than rewriting it.
+
+- **Changed Files**:
+  - `.codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md` — created, 418-line folder-based skill with YAML frontmatter
+  - `.codex/subtask/004_create-qyweb-skill/result.md` — updated, revised execution report for iteration 2
+  - `.codex/subtask/004_create-qyweb-skill/output_manifest.json` — updated, paths changed from standalone to folder-based format
+  - `/Users/qy/.claude/skills/qyweb_editing/SKILL.md` — created, Claude Code deployment
+  - `/Users/qy/.codex/skills/qyweb_editing/SKILL.md` — created, Codex deployment
+  - `/Users/qy/Library/.../workflow/settings/skill/qyweb_editing/SKILL.md` — created, backup deployment
+  - Old standalone files removed from all 3 external locations
+
+- **Summary**
+  - Codex completed the format migration cleanly in a single iteration: created folder structure, generated SKILL.md with correct frontmatter, deployed to all locations, removed old files, and verified integrity.
+  - The skill preserves all 418 lines of validated content from iteration 1, now properly packaged in the standard folder-based format matching other skills in the system.
+  - All 4 copies are byte-identical, confirming no corruption during deployment.
+  - The git working tree is clean — no site files or subtask 001–003 outputs were touched.
+
+- **Commit**
+  - "update - codex - execute subtask 004_create-qyweb-skill" (commit 9ec9703)
+
+- **Next**
+  - Subtask 004 (Revision 2) complete and passed review.
+  - All subtasks (001–004) are done. The entire QiYuan's Web skill creation project is complete.
+  - The `qyweb_editing/SKILL.md` skill is deployed and ready for use in future content operations.

@@ -1,23 +1,32 @@
 {
-  "decision": "revise",
+  "decision": "done",
   "current_subtask": "004_create-qyweb-skill",
-  "next_subtask": null,
-  "iteration": 2,
-  "summary": "Human instruction (2026-03-09 00:57): skill format is wrong. Must be restructured from standalone skill_qyweb_editing.md into folder-based format (qyweb_editing/SKILL.md with YAML frontmatter). Content was correct in iteration 1, only the format/structure needs to change. Old standalone files must be removed from all deployment locations.",
-  "human_instruction": "the generate skill is not right, use the skill skill_creator to generate, need to follow the skill format and give example/templates, like the other skill, also need to create a separate skill folder for this created skill",
-  "revision_requirements": [
-    "Remove old standalone skill_qyweb_editing.md from ~/.claude/skills/, ~/.codex/skills/, and backup path",
-    "Create qyweb_editing/ folder with SKILL.md inside (not a standalone .md file)",
-    "SKILL.md must have YAML frontmatter with 'name' and 'description' fields",
-    "Reuse content from iteration 1 but restructure into correct folder-based format",
-    "Deploy qyweb_editing/ folder to all 3 external locations",
-    "Fix minor vlog iframe issues (add style attribute, proper indentation)"
+  "summary": "Revision 2 of subtask 004 successfully migrated the QiYuan Web editing skill from standalone file format (skill_qyweb_editing.md) to folder-based format (qyweb_editing/SKILL.md) with YAML frontmatter. All 4 copies are byte-identical (SHA256: 15fccfc9...). Old standalone files confirmed removed from all 3 external locations. SKILL.md has correct YAML frontmatter (name: qyweb-editing, description: ...), 418 lines of comprehensive content covering all 5 collections, and follows the same folder structure as the reference paper_writing skill. No site files were modified. All subtasks 001-004 are now complete — the project is DONE.",
+  "evidence": [
+    "YAML frontmatter verified: lines 1-4 contain --- delimiters with name: qyweb-editing and description field",
+    "All 4 copies byte-identical: SHA256 15fccfc99763f203209499d93bd1724122b1bb019f39b02bb5369e7325ece242 across working copy, ~/.claude/skills/, ~/.codex/skills/, and workflow backup",
+    "Old standalone files confirmed removed: ls on all 3 paths returns 'No such file or directory'",
+    "Skill structure matches reference (paper_writing/SKILL.md): YAML frontmatter → # heading → ## Purpose → ## When to Use → ... sections",
+    "Content completeness: 10 step-by-step procedures (5 collection create + update existing + static pages + navigation + pre-commit validation + site overview)",
+    "All 5 inline templates present: _posts, _blogs, _figs, _shots, _vlogs with correct front matter and body patterns",
+    "Additional sections present: Conventions Quick-Reference, Common Pitfalls, 3 Examples",
+    "git status --short returns empty — no site files modified",
+    "File is 418 lines — substantive content, not shallow"
   ],
-  "subtask_agents_path": ".codex/subtask/004_create-qyweb-skill/subtask-agents.md",
+  "issues_found": [],
+  "acceptance_check": [
+    {"criterion": "Skill is organized as folder qyweb_editing/ containing SKILL.md", "result": "PASS", "detail": "qyweb_editing/SKILL.md exists at .codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md"},
+    {"criterion": "SKILL.md has YAML frontmatter with name and description", "result": "PASS", "detail": "Lines 1-4: name: qyweb-editing, description: Create, update, and manage content..."},
+    {"criterion": "Skill content is complete and self-contained (all 5 collections)", "result": "PASS", "detail": "Sections 2-6 cover _posts, _blogs, _figs, _shots, _vlogs with step-by-step procedures; 5 inline templates included"},
+    {"criterion": "Skill deployed as folders to all 3 external locations", "result": "PASS", "detail": "SHA256 identical across all 4 paths"},
+    {"criterion": "Old standalone files removed from all 3 external locations", "result": "PASS", "detail": "All 3 old paths return 'No such file or directory'"},
+    {"criterion": "Skill content verified against site-conventions.md", "result": "PASS", "detail": "Carried forward from iteration 1 review — content unchanged, only format migrated"}
+  ],
+  "next_subtask": null,
+  "subtask_agents_path": null,
   "stop_conditions": [
-    "qyweb_editing/SKILL.md exists in all 4 locations (subtask dir + 3 external)",
-    "Old standalone skill_qyweb_editing.md removed from all 3 external locations",
-    "SKILL.md has valid YAML frontmatter with name and description",
-    "Skill content verified against site-conventions.md"
+    "All 4 subtasks (001-004) have passed review",
+    "Project objective achieved: reusable skill file deployed in correct folder format to all target locations",
+    "No remaining subtasks in plan.json"
   ]
 }
