@@ -1,120 +1,81 @@
 {
   "version": "1.0",
-  "created_at": "2026-03-08T23:45:00+08:00",
+  "created_at": "2026-03-09T01:25:30",
   "strategy": "decompose_then_stepwise",
   "subtasks": [
     {
       "id": "001",
-      "slug": "audit-site-conventions",
-      "title": "Audit site structure and document conventions reference",
-      "status": "done",
+      "slug": "git-untrack-codex",
+      "title": "Remove .codex/ files from Git tracking",
+      "status": "todo",
       "depends_on": [],
-      "dir": ".codex/subtask/001_audit-site-conventions",
+      "dir": ".codex/subtask/001_git-untrack-codex",
       "acceptance": {
         "artifact_quality": [
-          "Reference document covers all 5 content collections (_posts, _blogs, _figs, _shots, _vlogs) with accurate front matter field listings",
-          "Reference includes exact naming conventions (YYYY-MM-DD-Slug.md), category naming patterns (hyphen-separated), and layout assignments",
-          "Reference documents the site navigation structure, sidebar links, and page hierarchy accurately",
-          "Reference captures the inline HTML title styling convention (e.g., <span style='color:#e32724'>) used in post titles",
-          "Reference includes image asset path conventions for each collection (public/fig_post/, public/shots/, etc.)",
-          "All information in the reference is verified against actual site files \u2014 no fabricated or assumed details"
+          "git ls-files .codex/ returns empty output (zero tracked files)",
+          ".codex/ folder still exists on disk with all contents intact (verify with ls)",
+          ".gitignore already contains .codex/ entry (confirm, do not duplicate)",
+          "No commit is created for this change alone — only stage the removal"
         ],
-        "verification": "Cross-check at least 3 documented conventions against actual site files to confirm accuracy. Verify that front matter examples match real posts."
+        "verification": "Run: git ls-files .codex/ (expect empty); ls .codex/ (expect contents); grep '.codex' .gitignore (expect match)"
       },
-      "artifacts": [
-        ".codex/subtask/001_audit-site-conventions/site-conventions.md"
-      ],
-      "order_reason": "Must document existing conventions before validating integrity or creating templates, so all downstream tasks have an accurate reference.",
-      "iterations": 1
+      "artifacts": [],
+      "order_reason": "Independent of other subtasks. Git hygiene must happen before any new commits to avoid re-tracking .codex/ files."
     },
     {
       "id": "002",
-      "slug": "validate-site-integrity",
-      "title": "Validate site content integrity and build readiness",
-      "status": "done",
-      "depends_on": [
-        "001"
-      ],
-      "dir": ".codex/subtask/002_validate-site-integrity",
+      "slug": "recreate-skill-via-creator",
+      "title": "Recreate qyweb_editing skill using skill_creator",
+      "status": "todo",
+      "depends_on": [],
+      "dir": ".codex/subtask/002_recreate-skill-via-creator",
       "acceptance": {
         "artifact_quality": [
-          "All content files in _posts, _blogs, _figs, _shots, _vlogs have valid YAML front matter (no parse errors)",
-          "Every content file has required front matter fields: layout, title, date, categories",
-          "Layout values in front matter match actual layout files in _layouts/ (no orphaned references)",
-          "Jekyll build completes without fatal errors (warnings acceptable but documented)",
-          "Validation report lists any issues found with specific file paths and descriptions"
+          "SKILL.md has YAML frontmatter with name: qyweb_editing (or name: \"qyweb_editing\") and a comprehensive multi-sentence description trigger",
+          "Skill follows the structural pattern of /Users/qy/.codex/skills/imagegen/SKILL.md: YAML frontmatter, decision tree or workflow section, conventions section, inline examples",
+          "Skill covers all 5 collections (_posts, _blogs, _figs, _shots, _vlogs) plus static pages (about.md, notes.html, etc.) plus sidebar navigation",
+          "Includes inline examples showing how to create each content type with sample front matter and expected filenames",
+          "Skill created via the skill_creator skill workflow (not manually written from scratch)",
+          "Old single-file skill deleted from all 3 locations before deploying new version",
+          "SKILL.md deployed and byte-identical (SHA256 match) across all 3 locations: /Users/qy/.claude/skills/qyweb_editing/SKILL.md, /Users/qy/.codex/skills/qyweb_editing/SKILL.md, and workflow backup location",
+          "Skill appears in Claude Code's active skill registry (verify with claude skill list or equivalent)"
         ],
-        "verification": "Run a YAML front matter validation script across all content files. Attempt a Jekyll build (bundle exec jekyll build) and capture output. Report includes pass/fail per file."
+        "verification": "Run: shasum -a 256 on all 3 SKILL.md locations (expect identical hashes); head -5 SKILL.md (expect YAML frontmatter); grep -c '_posts\\|_blogs\\|_figs\\|_shots\\|_vlogs' SKILL.md (expect >= 5 matches)"
       },
       "artifacts": [
-        ".codex/subtask/002_validate-site-integrity/validation-report.md"
+        "SKILL.md"
       ],
-      "order_reason": "Depends on 001 for the conventions reference to know what 'valid' means. Must validate before creating templates to ensure templates are based on working patterns.",
-      "iterations": 1
+      "order_reason": "Core deliverable. Must complete before subtask 003 can populate the references/ subfolder. Uses existing skill content as knowledge base for skill_creator."
     },
     {
       "id": "003",
-      "slug": "create-content-templates",
-      "title": "Create reusable content templates for each collection type",
-      "status": "done",
-      "depends_on": [
-        "001",
-        "002"
-      ],
-      "dir": ".codex/subtask/003_create-content-templates",
+      "slug": "populate-references-folder",
+      "title": "Create references/ subfolder with template and convention files",
+      "status": "todo",
+      "depends_on": ["002"],
+      "dir": ".codex/subtask/003_populate-references-folder",
       "acceptance": {
         "artifact_quality": [
-          "One template file per collection type: post, blog, fig, shot, vlog \u2014 each with correct layout, front matter fields, and placeholder content",
-          "Templates use the exact front matter field names, ordering, and formatting found in existing site content",
-          "Each template includes inline comments or placeholders guiding the user on what to fill in (title, date, categories, image paths)",
-          "Templates follow the YYYY-MM-DD-Slug.md naming convention with a clear naming instruction",
-          "A quick-reference guide accompanies the templates summarizing when to use each collection type"
+          "references/ subfolder exists inside qyweb_editing skill folder at all 3 deployment locations",
+          "Contains at minimum 6 files: post-template.md, blog-template.md, fig-template.md, shot-template.md, vlog-template.md, quick-reference.md",
+          "Each template has valid YAML front matter (parseable by yaml.safe_load without errors) with the correct layout field for its collection type",
+          "Templates match site conventions: correct front matter field order, correct layout values (post, blog, fig, shot, vlog), correct permalink patterns",
+          "quick-reference.md covers all 5 collections with filename patterns, front matter fields, and asset path conventions",
+          "Optionally includes site-conventions.md (condensed, under 200 lines) summarizing full site architecture",
+          "All 3 references/ folders are byte-identical (verified with diff -r or checksums)",
+          "SKILL.md references the references/ folder with guidance on when to read each file"
         ],
-        "verification": "Place a test post using one template into the appropriate collection folder and verify Jekyll builds without errors. Remove the test post after verification."
+        "verification": "Run: ls references/ in each location (expect 6+ files); python3 -c 'import yaml; yaml.safe_load(open(\"post-template.md\"))' for each template; diff -r across all 3 locations (expect no differences)"
       },
       "artifacts": [
-        ".codex/subtask/003_create-content-templates/templates/post-template.md",
-        ".codex/subtask/003_create-content-templates/templates/blog-template.md",
-        ".codex/subtask/003_create-content-templates/templates/fig-template.md",
-        ".codex/subtask/003_create-content-templates/templates/shot-template.md",
-        ".codex/subtask/003_create-content-templates/templates/vlog-template.md",
-        ".codex/subtask/003_create-content-templates/templates/quick-reference.md"
+        "references/post-template.md",
+        "references/blog-template.md",
+        "references/fig-template.md",
+        "references/shot-template.md",
+        "references/vlog-template.md",
+        "references/quick-reference.md"
       ],
-      "order_reason": "Depends on both 001 (conventions) and 002 (validated patterns) to ensure templates are based on correct, working conventions.",
-      "iterations": 1
-    },
-    {
-      "id": "004",
-      "slug": "create-qyweb-skill",
-      "title": "Create QiYuan Web editing skill for Claude and Codex",
-      "status": "done",
-      "depends_on": [
-        "001",
-        "002",
-        "003"
-      ],
-      "dir": ".codex/subtask/004_create-qyweb-skill",
-      "acceptance": {
-        "artifact_quality": [
-          "Skill is organized as a FOLDER (qyweb_editing/) containing SKILL.md \u2014 NOT a standalone .md file",
-          "SKILL.md has YAML frontmatter with 'name' and 'description' fields matching skill-creator format",
-          "Skill file is a complete, self-contained guide for creating, updating, and managing QiYuan website content (posts, blogs, figs, shots, vlogs, and main page)",
-          "Skill consolidates conventions from subtask 001, validation findings from 002, and templates from 003 into actionable instructions",
-          "Skill covers front matter conventions, naming patterns, asset paths, category rules, layout assignments, and content structure for every collection type",
-          "Skill includes step-by-step procedures for common operations: create new post, update existing page, add images, embed videos, modify sidebar/navigation",
-          "Skill is deployed as a folder to all 3 required locations: /Users/qy/.claude/skills/qyweb_editing/, /Users/qy/.codex/skills/qyweb_editing/, and the backup workflow settings path",
-          "Skill follows the standard skill file format with YAML frontmatter, Purpose, Triggers, Step-by-Step Procedure, Do/Don't, Examples, and inline templates sections"
-        ],
-        "verification": "Verify skill FOLDER (qyweb_editing/SKILL.md) exists in all 3 target locations. Confirm YAML frontmatter has name and description. Confirm skill content accurately references site conventions by cross-checking against site-conventions.md. Remove old standalone skill_qyweb_editing.md files."
-      },
-      "artifacts": [
-        ".codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md",
-        "/Users/qy/.claude/skills/qyweb_editing/SKILL.md",
-        "/Users/qy/.codex/skills/qyweb_editing/SKILL.md",
-        "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md"
-      ],
-      "order_reason": "REVISE 3: Human instruction says skill not triggering. Fixed: (1) changed YAML name field from qyweb-editing to qyweb_editing to match folder name, (2) quoted description in YAML frontmatter for proper parsing, (3) added qyweb_editing to SKILL_INDEX.md for Codex discovery, (4) created project-level CLAUDE.md in QiYuan's Web repo to hint Claude Code to use qyweb_editing skill when working in this project. All 4 deployed copies updated and verified byte-identical.",
-      "iterations": 4
+      "order_reason": "Depends on subtask 002 — the skill folder must exist before references/ can be populated. Templates are derived from reading actual site content files and the existing skill knowledge."
     }
   ]
 }

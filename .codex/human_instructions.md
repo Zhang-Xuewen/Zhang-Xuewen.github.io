@@ -28,3 +28,10 @@
 
 ### Human instructions
 - put your generated template file into the created skill folder with a new subfolder named "references" like the skill folder: /Users/qy/.codex/skills/imagegen
+
+---
+
+## Human Instruction · 2026-03-09 01:23
+
+### Human instructions
+- put your generated template file into the created skill folder with a new subfolder named "references" like the skill folder: /Users/qy/.codex/skills/imagegen
