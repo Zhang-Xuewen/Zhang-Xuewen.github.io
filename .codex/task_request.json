@@ -15,9 +15,11 @@
   "reviewer": {
     "enabled": true,
     "engine": "claude",
+    "max_runs": 100,
     "mode": "decompose_then_stepwise",
     "small_task_budget": 1,
     "activity_path": ".codex/activity.md",
+    "subtask_activity_path": ".codex/subtask_activity.md",
     "subtask_dir": ".codex/subtask",
     "reviewer_dir": ".codex/reviewer"
   },

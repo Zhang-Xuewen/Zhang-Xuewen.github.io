@@ -31,7 +31,7 @@
       "id": "002",
       "slug": "validate-site-integrity",
       "title": "Validate site content integrity and build readiness",
-      "status": "doing",
+      "status": "done",
       "depends_on": [
         "001"
       ],
@@ -56,7 +56,7 @@
       "id": "003",
       "slug": "create-content-templates",
       "title": "Create reusable content templates for each collection type",
-      "status": "todo",
+      "status": "doing",
       "depends_on": [
         "001",
         "002"
@@ -80,7 +80,8 @@
         ".codex/subtask/003_create-content-templates/templates/vlog-template.md",
         ".codex/subtask/003_create-content-templates/templates/quick-reference.md"
       ],
-      "order_reason": "Depends on both 001 (conventions) and 002 (validated patterns) to ensure templates are based on correct, working conventions."
+      "order_reason": "Depends on both 001 (conventions) and 002 (validated patterns) to ensure templates are based on correct, working conventions.",
+      "iterations": 1
     },
     {
       "id": "004",
