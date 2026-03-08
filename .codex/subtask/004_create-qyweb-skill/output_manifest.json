@@ -1,40 +1,40 @@
 {
   "artifacts": [
     {
-      "path": ".codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md",
+      "path": ".codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md",
       "type": "document",
-      "description": "Primary self-contained QiYuan Web editing skill file covering conventions, procedures, templates, validation, pitfalls, and examples.",
-      "verify_hint": "Read content and check structure, completeness, quality"
+      "description": "Working-copy QiYuan web editing skill in required folder format with YAML frontmatter and full skill body.",
+      "verify_hint": "Read top of file for YAML frontmatter and scan sections for procedures/templates across all 5 collections."
     },
     {
-      "path": "/Users/qy/.claude/skills/skill_qyweb_editing.md",
+      "path": "/Users/qy/.claude/skills/qyweb_editing/SKILL.md",
       "type": "document",
-      "description": "Deployed Claude Code copy of the skill file.",
-      "verify_hint": "Compare checksum/diff against subtask working copy"
+      "description": "Claude skills deployment copy of qyweb_editing folder-based skill.",
+      "verify_hint": "Compare SHA256 or run diff against subtask working copy."
     },
     {
-      "path": "/Users/qy/.codex/skills/skill_qyweb_editing.md",
+      "path": "/Users/qy/.codex/skills/qyweb_editing/SKILL.md",
       "type": "document",
-      "description": "Deployed Codex skills-folder copy of the skill file.",
-      "verify_hint": "Compare checksum/diff against subtask working copy"
+      "description": "Codex skills deployment copy of qyweb_editing folder-based skill.",
+      "verify_hint": "Compare SHA256 or run diff against subtask working copy."
     },
     {
-      "path": "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md",
+      "path": "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md",
       "type": "document",
-      "description": "Deployed workflow backup copy of the skill file.",
-      "verify_hint": "Compare checksum/diff against subtask working copy"
+      "description": "Backup workflow settings deployment copy of qyweb_editing folder-based skill.",
+      "verify_hint": "Compare SHA256 or run diff against subtask working copy."
     },
     {
       "path": ".codex/subtask/004_create-qyweb-skill/result.md",
       "type": "document",
-      "description": "Execution report for subtask 004 with actions, evidence, acceptance checks, and status.",
-      "verify_hint": "Read content and check structure, completeness, quality"
+      "description": "Detailed execution report with commands run, file changes, evidence, and acceptance checklist.",
+      "verify_hint": "Read for full traceability and confirm acceptance checks map to artifacts."
     },
     {
       "path": ".codex/subtask/004_create-qyweb-skill/output_manifest.json",
       "type": "config",
-      "description": "Artifact manifest listing all subtask outputs for reviewer verification.",
-      "verify_hint": "Validate syntax and required fields"
+      "description": "Artifact manifest for reviewer verification of subtask outputs.",
+      "verify_hint": "Validate JSON syntax and ensure all created/modified deliverables are listed."
     }
   ]
 }

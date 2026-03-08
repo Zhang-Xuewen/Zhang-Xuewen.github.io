@@ -96,7 +96,7 @@
       "dir": ".codex/subtask/004_create-qyweb-skill",
       "acceptance": {
         "artifact_quality": [
-          "Skill is organized as a FOLDER (qyweb_editing/) containing SKILL.md — NOT a standalone .md file",
+          "Skill is organized as a FOLDER (qyweb_editing/) containing SKILL.md \u2014 NOT a standalone .md file",
           "SKILL.md has YAML frontmatter with 'name' and 'description' fields matching skill-creator format",
           "Skill file is a complete, self-contained guide for creating, updating, and managing QiYuan website content (posts, blogs, figs, shots, vlogs, and main page)",
           "Skill consolidates conventions from subtask 001, validation findings from 002, and templates from 003 into actionable instructions",
@@ -114,7 +114,7 @@
         "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md"
       ],
       "order_reason": "REVISE: Human instruction says skill format is wrong. Must use skill-creator folder format (qyweb_editing/SKILL.md with YAML frontmatter), not a standalone .md file. Must create a separate skill folder. Must follow the same format as other skills like paper_writing, pdf, etc.",
-      "iterations": 2
+      "iterations": 3
     }
   ]
 }
