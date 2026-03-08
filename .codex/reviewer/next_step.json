@@ -1,46 +1,23 @@
 {
-  "decision": "done",
+  "decision": "revise",
   "current_subtask": "004_create-qyweb-skill",
   "next_subtask": null,
-  "summary": "Subtask 004 passed review — final subtask complete, project is done. The skill file is a comprehensive 413-line self-contained guide covering all 5 collection types with accurate conventions, inline templates, validation rules, and common pitfalls. All 4 deployed copies are byte-identical (SHA256: 4ece223901b74ac8744f3c9424c54a60df8aa1b1421fafcaf286be54ed27b80a). Conventions cross-checked against actual site files — all accurate. No site files were modified.",
-  "evidence": [
-    "Skill file exists at all 4 required locations with identical SHA256 hash (4ece223901b74ac8744f3c9424c54a60df8aa1b1421fafcaf286be54ed27b80a)",
-    "Skill follows standard format: Purpose, When to Use, Inputs/Assumptions, Step-by-Step Procedure (10 sections), Do/Don't, Artifacts/Outputs, Quality Checklist, Conventions Quick-Reference, Inline Templates (5), Common Pitfalls, Examples (3)",
-    "Front matter field order (layout, title, date, categories, comments) verified against all 5 collection sample files — exact match",
-    "Layout mapping (post/blog/fig/shot/vlog) verified against _posts/2024-08-29-Developed-QYtool.md, _blogs/2024-04-05-DeePC-WWTPs.md, _figs/2024-03-29-Logo.md, _shots/2023-03-23-Daily-life.md, _vlogs/2024-01-02-Bye-Bye-2023.md",
-    "Category hyphen display rule (replace: '-', ' ') confirmed in notes.html, gallery.html, shots.html, Vlog.html",
-    "Collection permalink pattern /:collection/:path/ confirmed in _config.yml for figs, vlogs, shots, blogs",
-    "Asset path conventions (public/fig_post/, public/shots/) verified against site-conventions.md and directory structure",
-    "git status confirms clean working tree — no site files modified",
-    "Minor: vlog template iframe omits style='height:100%;width:100%' and indentation present in actual vlog file — cosmetic only"
+  "iteration": 2,
+  "summary": "Human instruction (2026-03-09 00:57): skill format is wrong. Must be restructured from standalone skill_qyweb_editing.md into folder-based format (qyweb_editing/SKILL.md with YAML frontmatter). Content was correct in iteration 1, only the format/structure needs to change. Old standalone files must be removed from all deployment locations.",
+  "human_instruction": "the generate skill is not right, use the skill skill_creator to generate, need to follow the skill format and give example/templates, like the other skill, also need to create a separate skill folder for this created skill",
+  "revision_requirements": [
+    "Remove old standalone skill_qyweb_editing.md from ~/.claude/skills/, ~/.codex/skills/, and backup path",
+    "Create qyweb_editing/ folder with SKILL.md inside (not a standalone .md file)",
+    "SKILL.md must have YAML frontmatter with 'name' and 'description' fields",
+    "Reuse content from iteration 1 but restructure into correct folder-based format",
+    "Deploy qyweb_editing/ folder to all 3 external locations",
+    "Fix minor vlog iframe issues (add style attribute, proper indentation)"
   ],
-  "issues_found": [
-    {
-      "severity": "minor",
-      "description": "Vlog inline template iframe lacks style='height: 100%;width: 100%;' attribute present in the actual _vlogs/2024-01-02-Bye-Bye-2023.md file. The CSS .video class sets container dimensions, but the iframe needs these inline styles to fill the container properly. Non-blocking since an AI using the skill can observe the real file and add the attribute.",
-      "location": "skill_qyweb_editing.md lines 373-377",
-      "blocking": false
-    },
-    {
-      "severity": "minor",
-      "description": "Vlog template iframe is not indented inside <div class='video'> while the actual vlog file indents it with 4 spaces. Purely cosmetic source formatting difference.",
-      "location": "skill_qyweb_editing.md lines 373-377",
-      "blocking": false
-    }
-  ],
-  "acceptance_check": [
-    { "criterion": "Skill file is complete and self-contained — covers all 5 collection types with step-by-step creation instructions", "status": "pass", "evidence": "Sections 2-6 provide dedicated step-by-step procedures for _posts, _blogs, _figs, _shots, _vlogs respectively" },
-    { "criterion": "Skill follows the standard skill file format (Purpose, Triggers, Procedure, Do/Don't, Examples)", "status": "pass", "evidence": "All 8 required standard sections present plus Conventions Quick-Reference, Inline Templates, and Common Pitfalls bonus sections" },
-    { "criterion": "Front matter conventions are accurate and match actual site files", "status": "pass", "evidence": "Field order layout→title→date→categories→comments verified against 5 real files across all collections" },
-    { "criterion": "Skill includes inline templates for each collection type", "status": "pass", "evidence": "5 inline templates present (post, blog, fig, shot, vlog) with correct front matter, body structure, and HTML guidance comments" },
-    { "criterion": "Skill is deployed to all 4 required locations", "status": "pass", "evidence": "SHA256 4ece2239... identical across subtask dir, ~/.claude/skills/, ~/.codex/skills/, and workflow backup path" },
-    { "criterion": "Skill content is verified against site-conventions.md for accuracy", "status": "pass", "evidence": "Cross-checked layout mapping, category display logic, permalink patterns, asset paths, and sidebar structure — all match" }
-  ],
-  "subtask_agents_path": null,
+  "subtask_agents_path": ".codex/subtask/004_create-qyweb-skill/subtask-agents.md",
   "stop_conditions": [
-    "All 4 subtasks (001-004) completed and passed review",
-    "Final deliverable (skill file) deployed to all required locations",
-    "No remaining subtasks in plan.json",
-    "Project objective achieved: reusable skill for QiYuan's Web content management is complete and operational"
+    "qyweb_editing/SKILL.md exists in all 4 locations (subtask dir + 3 external)",
+    "Old standalone skill_qyweb_editing.md removed from all 3 external locations",
+    "SKILL.md has valid YAML frontmatter with name and description",
+    "Skill content verified against site-conventions.md"
   ]
 }

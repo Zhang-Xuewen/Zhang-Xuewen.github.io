@@ -1,111 +1,76 @@
-# Subtask 004: Create QiYuan Web Editing Skill for Claude and Codex
+# Subtask 004: Create QiYuan Web Editing Skill for Claude and Codex (REVISION 2)
+
+## Human Instruction (2026-03-09 00:57)
+
+> "the generate skill is not right, use the skill skill_creator to generate, need to follow the skill format and give example/templates, like the other skill, also need to create a separate skill folder for this created skill"
+
+## What Changed from Iteration 1
+
+- The skill must be a **folder** (`qyweb_editing/`) containing `SKILL.md` — NOT a standalone `.md` file
+- `SKILL.md` must have **YAML frontmatter** with `name` and `description` fields
+- Old standalone `skill_qyweb_editing.md` files must be **removed** from all deployment locations
+- The skill CONTENT from iteration 1 was correct — only the FORMAT/structure needs to change
 
 ## Scope
 
-Consolidate all knowledge gathered from subtasks 001–003 into a single, reusable skill file that enables any AI assistant (Claude Code, Codex) to create, update, and manage content on the QiYuan's Web Jekyll/GitHub Pages site. The skill must be self-contained — an assistant reading only the skill file should be able to perform any standard content operation correctly.
+Restructure the QiYuan Web editing skill into the correct skill-creator folder format (`qyweb_editing/SKILL.md` with YAML frontmatter) and redeploy to all target locations. Remove old standalone format files.
 
 ## Inputs
 
-- `.codex/subtask/001_audit-site-conventions/site-conventions.md` — comprehensive conventions reference
+- `.codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md` — previous iteration's content (reuse, don't rewrite)
+- `.codex/subtask/001_audit-site-conventions/site-conventions.md` — conventions reference
 - `.codex/subtask/002_validate-site-integrity/validation-report.md` — validation results and known issues
-- `.codex/subtask/003_create-content-templates/templates/` — all template files and quick-reference guide
-- Existing site files as needed for verification
+- `.codex/subtask/003_create-content-templates/templates/` — template files
+- `/Users/qy/.claude/skills/paper_writing/SKILL.md` — reference for correct folder-based skill format
 
 ## Outputs
 
-The same skill file must be placed in all 4 locations:
+The skill must be deployed as a FOLDER at each location:
 
-1. `.codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md` — working copy in subtask dir
-2. `/Users/qy/.claude/skills/skill_qyweb_editing.md` — Claude Code skills folder
-3. `/Users/qy/.codex/skills/skill_qyweb_editing.md` — Codex skills folder
-4. `/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md` — backup location
+1. `.codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md` — working copy
+2. `/Users/qy/.claude/skills/qyweb_editing/SKILL.md` — Claude Code skills
+3. `/Users/qy/.codex/skills/qyweb_editing/SKILL.md` — Codex skills
+4. `/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md` — backup
 
-## Skill File Requirements
+Old standalone files to REMOVE:
+- `/Users/qy/.claude/skills/skill_qyweb_editing.md`
+- `/Users/qy/.codex/skills/skill_qyweb_editing.md`
+- `/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md`
 
-### Standard Skill Format
+## Required SKILL.md Format
 
-The skill must follow this structure:
-
-```
-# skill_qyweb_editing
-
-## Purpose
-[What this skill enables]
-
-## When to Use (Triggers)
-[When to activate this skill]
-
-## Inputs / Assumptions
-[What the skill expects]
-
-## Step-by-Step Procedure
-[Detailed procedures for each operation type]
-
-## Do / Don't
-[Rules and constraints]
-
-## Artifacts / Outputs
-[What the skill produces]
-
-## Quality Checklist
-[Verification steps]
-
-## Examples
-[Concrete examples of common operations]
+```yaml
+---
+name: qyweb-editing
+description: Create, update, and manage content on QiYuan's Web (Jekyll/Hyde on GitHub Pages). Use this skill whenever the user asks to create new posts, blogs, figures, photo shots, or vlogs, edit existing content files, update the main page or sidebar navigation, fix front matter issues, or manage image/video assets for the site.
+---
 ```
 
-### Content the Skill Must Cover
-
-1. **Site Overview**: Brief description of the QiYuan's Web site architecture (Jekyll/Hyde, 5 collections, GitHub Pages)
-
-2. **Content Operations — Step-by-Step Procedures for**:
-   - Creating a new post in `_posts/`
-   - Creating a new blog entry in `_blogs/`
-   - Creating a new figure post in `_figs/`
-   - Creating a new shot in `_shots/`
-   - Creating a new vlog in `_vlogs/`
-   - Updating an existing content file
-   - Updating static pages (about, publication, etc.)
-   - Updating the main page / sidebar navigation
-
-3. **Conventions Reference** (condensed from subtask 001):
-   - Front matter fields per collection type (exact field names and order)
-   - Filename convention: `YYYY-MM-DD-Title-With-Hyphens.md`
-   - Category naming: hyphen-separated, display with spaces
-   - Title styling: inline HTML `<span>` convention
-   - Asset paths per collection (`public/fig_post/`, `public/shots/`, etc.)
-   - Layout assignments per collection type
-
-4. **Templates**: Include the full template for each collection type inline (from subtask 003)
-
-5. **Validation Rules**: Key rules to check before committing new content:
-   - YAML front matter is valid
-   - Layout value matches an existing layout
-   - Date in filename matches front matter date
-   - Images referenced actually exist
-   - Categories follow naming conventions
-
-6. **Common Pitfalls**: Known issues from the validation report (subtask 002)
+Followed by the standard skill sections:
+- Purpose
+- When to Use (Triggers)
+- Inputs / Assumptions
+- Step-by-Step Procedure (per collection type + static pages + navigation)
+- Do / Don't
+- Artifacts / Outputs
+- Quality Checklist
+- Conventions Quick-Reference (table)
+- Inline Templates (all 5 collection types)
+- Common Pitfalls
+- Examples (concrete scenarios)
 
 ## Acceptance Criteria
 
-1. Skill file is complete and self-contained — covers all 5 collection types with step-by-step creation instructions
-2. Skill follows the standard skill file format (Purpose, Triggers, Procedure, Do/Don't, Examples)
-3. Front matter conventions are accurate and match actual site files
-4. Skill includes inline templates for each collection type
-5. Skill is deployed to all 4 required locations (subtask dir + 3 external paths)
+1. Skill is organized as a folder `qyweb_editing/` containing `SKILL.md` — NOT a standalone `.md` file
+2. `SKILL.md` has YAML frontmatter with `name` and `description` fields
+3. Skill content is complete and self-contained (all 5 collection types, procedures, templates, examples)
+4. Skill is deployed as folders to all 3 external target locations
+5. Old standalone `skill_qyweb_editing.md` files are removed from all 3 external locations
 6. Skill content is verified against `site-conventions.md` for accuracy
-
-## Verification
-
-- Cross-check at least 3 conventions in the skill against `site-conventions.md` and actual site files
-- Confirm the skill file exists and is identical in all 4 target locations
-- Walk through one skill procedure mentally (e.g., "create a new post") and verify every instruction is correct
 
 ## Forbidden Actions
 
 - Do NOT modify any existing site files (content, layouts, config, CSS)
 - Do NOT modify outputs from subtasks 001–003
-- Do NOT create files other than the skill file in the 4 specified locations
 - Do NOT commit or push anything
 - Do NOT fabricate conventions not documented in `site-conventions.md`

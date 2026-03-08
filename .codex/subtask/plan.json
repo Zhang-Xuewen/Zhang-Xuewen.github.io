@@ -87,7 +87,7 @@
       "id": "004",
       "slug": "create-qyweb-skill",
       "title": "Create QiYuan Web editing skill for Claude and Codex",
-      "status": "done",
+      "status": "revise",
       "depends_on": [
         "001",
         "002",
@@ -96,23 +96,25 @@
       "dir": ".codex/subtask/004_create-qyweb-skill",
       "acceptance": {
         "artifact_quality": [
+          "Skill is organized as a FOLDER (qyweb_editing/) containing SKILL.md — NOT a standalone .md file",
+          "SKILL.md has YAML frontmatter with 'name' and 'description' fields matching skill-creator format",
           "Skill file is a complete, self-contained guide for creating, updating, and managing QiYuan website content (posts, blogs, figs, shots, vlogs, and main page)",
           "Skill consolidates conventions from subtask 001, validation findings from 002, and templates from 003 into actionable instructions",
           "Skill covers front matter conventions, naming patterns, asset paths, category rules, layout assignments, and content structure for every collection type",
           "Skill includes step-by-step procedures for common operations: create new post, update existing page, add images, embed videos, modify sidebar/navigation",
-          "Skill is deployed to all 3 required locations: /Users/qy/.claude, /Users/qy/.codex/skills, and the backup workflow settings path",
-          "Skill follows the standard skill file format with Purpose, Triggers, Step-by-Step Procedure, Do/Don't, and Examples sections"
+          "Skill is deployed as a folder to all 3 required locations: /Users/qy/.claude/skills/qyweb_editing/, /Users/qy/.codex/skills/qyweb_editing/, and the backup workflow settings path",
+          "Skill follows the standard skill file format with YAML frontmatter, Purpose, Triggers, Step-by-Step Procedure, Do/Don't, Examples, and inline templates sections"
         ],
-        "verification": "Verify skill file exists in all 3 target locations. Confirm skill content accurately references site conventions by cross-checking against site-conventions.md. Test that Claude Code can invoke the skill by name."
+        "verification": "Verify skill FOLDER (qyweb_editing/SKILL.md) exists in all 3 target locations. Confirm YAML frontmatter has name and description. Confirm skill content accurately references site conventions by cross-checking against site-conventions.md. Remove old standalone skill_qyweb_editing.md files."
       },
       "artifacts": [
-        ".codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md",
-        "/Users/qy/.claude/skills/skill_qyweb_editing.md",
-        "/Users/qy/.codex/skills/skill_qyweb_editing.md",
-        "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md"
+        ".codex/subtask/004_create-qyweb-skill/qyweb_editing/SKILL.md",
+        "/Users/qy/.claude/skills/qyweb_editing/SKILL.md",
+        "/Users/qy/.codex/skills/qyweb_editing/SKILL.md",
+        "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/qyweb_editing/SKILL.md"
       ],
-      "order_reason": "Depends on all prior subtasks (001 conventions, 002 validation, 003 templates) to consolidate complete site knowledge into a reusable skill. Human instruction: skill must be created and placed in Claude, Codex, and backup skill folders.",
-      "iterations": 1
+      "order_reason": "REVISE: Human instruction says skill format is wrong. Must use skill-creator folder format (qyweb_editing/SKILL.md with YAML frontmatter), not a standalone .md file. Must create a separate skill folder. Must follow the same format as other skills like paper_writing, pdf, etc.",
+      "iterations": 2
     }
   ]
 }
