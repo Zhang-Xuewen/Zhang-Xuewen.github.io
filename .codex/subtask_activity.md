@@ -318,3 +318,93 @@
 - **Next**
   - Subtask 003 complete and passed review.
   - Proceed to subtask `004_create-qyweb-skill` — Codex will consolidate conventions, validation findings, and templates into a single reusable skill file deployed to 4 locations.
+
+---
+
+# 📋 Summary · 2026-03-09 02:00 · by QYFlow
+
+## 📌 Subtask Brief
+
+- **Subtask**: `004_create-qyweb-skill` — Create QiYuan Web Editing Skill for Claude and Codex
+- **Iteration**: 0 previous attempt(s)
+- **Objective**:
+  - Consolidate all knowledge gathered from subtasks 001–003 into a single, reusable skill file (`skill_qyweb_editing.md`) that enables any AI assistant to create, update, and manage content on the QiYuan's Web Jekyll/GitHub Pages site.
+  - The skill must be self-contained — an assistant reading only the skill file should be able to perform any standard content operation correctly.
+  - The skill must follow the standard skill file format and be deployed to 4 locations: subtask dir, `~/.claude/skills/`, `~/.codex/skills/`, and the backup workflow settings path.
+  - This is the final subtask in the project. Successful completion means the entire workflow objective is achieved.
+
+
+## 🧠 Claude
+
+- **Role**: Reviewer
+- **Decision**: PASS (project DONE — all subtasks complete)
+
+- **Summary**
+    1. Codex produced a comprehensive 413-line skill file that consolidates conventions (subtask 001), validation findings (subtask 002), and templates (subtask 003) into a single self-contained reference.
+    2. The skill covers all 5 collection types with dedicated step-by-step creation procedures, plus procedures for updating existing content, static pages, and sidebar navigation.
+    3. Reviewer independently verified conventions against actual site files:
+        - Front matter field order (layout, title, date, categories, comments) matches all 5 collection sample files exactly.
+        - Layout mapping (post/blog/fig/shot/vlog) confirmed against real content files.
+        - Category hyphen display rule (`replace: "-", " "`) confirmed in `notes.html`, `gallery.html`, `shots.html`, `Vlog.html`.
+        - Collection permalink pattern `/:collection/:path/` confirmed in `_config.yml`.
+        - Asset path conventions (`public/fig_post/`, `public/shots/`) confirmed against directory structure.
+    4. All 4 deployed copies are byte-identical (SHA256: `4ece223901b74ac8744f3c9424c54a60df8aa1b1421fafcaf286be54ed27b80a`).
+    5. Two minor (non-blocking) issues noted:
+        (1) Vlog template iframe omits `style="height: 100%;width: 100%;"` present in the real vlog file — cosmetic.
+        (2) Vlog template iframe not indented inside `<div class="video">` — cosmetic.
+    6. No site files were modified. Git working tree is clean.
+
+- **Evidence / Criteria**
+    - `[x]` Skill file is complete and self-contained — covers all 5 collection types with step-by-step creation instructions — verified: sections 2–6 provide dedicated procedures for _posts, _blogs, _figs, _shots, _vlogs
+    - `[x]` Skill follows the standard skill file format (Purpose, Triggers, Procedure, Do/Don't, Examples) — verified: all 8 required sections present plus Conventions Quick-Reference, Inline Templates, and Common Pitfalls
+    - `[x]` Front matter conventions are accurate and match actual site files — verified: field order layout→title→date→categories→comments cross-checked against 5 real files
+    - `[x]` Skill includes inline templates for each collection type — verified: 5 templates present with correct front matter, body structure, and HTML guidance comments
+    - `[x]` Skill is deployed to all 4 required locations — verified: SHA256 identical across all 4 paths
+    - `[x]` Skill content is verified against site-conventions.md for accuracy — verified: layout mapping, category display logic, permalink patterns, asset paths, sidebar structure all match
+
+- **Commit**
+    - No commits made by reviewer — review-only phase.
+
+- **Next**
+    - All 4 subtasks (001–004) have passed review. The project is complete.
+    - The reusable skill file `skill_qyweb_editing.md` is deployed and operational in Claude Code skills, Codex skills, and backup locations.
+    - Any future content operations on QiYuan's Web can leverage this skill for consistent, convention-accurate editing.
+
+
+### 🚀 Codex (Executor)
+
+- **Actions Taken**:
+  - Read all prerequisite documents: `site-conventions.md` (subtask 001), `validation-report.md` (subtask 002), all 5 templates and quick-reference from subtask 003, and sample content files from all 5 collections.
+  - Inspected actual site files (`_config.yml`, `_includes/sidebar.html`, sample content per collection, asset directories) for cross-verification.
+  - Created the 413-line skill file at `.codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md` with all required sections: Purpose, When to Use, Inputs/Assumptions, Step-by-Step Procedure (10 procedures), Do/Don't, Artifacts/Outputs, Quality Checklist, Conventions Quick-Reference, Inline Templates (5), Common Pitfalls, and Examples (3).
+  - Deployed identical copies to all 3 external locations: `~/.claude/skills/`, `~/.codex/skills/`, and the workflow backup path.
+  - Verified all 4 copies are byte-identical via SHA256 checksums and `diff -q`.
+  - Confirmed no site files were modified via `git status`.
+
+- **Why**:
+  - The skill file is the culmination of the entire 4-subtask workflow — it packages all site knowledge into a single, actionable reference that any AI assistant can use without needing to re-audit the site.
+  - Deploying to 4 locations ensures availability regardless of which tool (Claude Code or Codex) is used, plus a backup.
+
+- **Changed Files**:
+  - `.codex/subtask/004_create-qyweb-skill/skill_qyweb_editing.md` — created, 413-line self-contained skill file
+  - `.codex/subtask/004_create-qyweb-skill/result.md` — created, execution report with acceptance checks and cross-check evidence
+  - `.codex/subtask/004_create-qyweb-skill/output_manifest.json` — created, artifact manifest listing all 6 outputs
+  - `/Users/qy/.claude/skills/skill_qyweb_editing.md` — created, Claude Code skills deployment
+  - `/Users/qy/.codex/skills/skill_qyweb_editing.md` — created, Codex skills deployment
+  - `/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/Interesting Projects/CodexCLI_workflow/workflow/settings/skill/skill_qyweb_editing.md` — created, backup deployment
+  - `.codex/state.json` — modified, updated current_subtask to "004"
+  - `.codex/subtask/plan.json` — modified, updated subtask 004 status to "doing"
+
+- **Summary**
+  - Codex successfully consolidated all upstream knowledge into a comprehensive, self-contained skill file that covers site architecture overview, step-by-step procedures for all 5 collection types plus static pages and navigation, condensed conventions reference with front matter tables, full inline templates, pre-commit validation rules, common pitfalls from the validation report, and 3 concrete usage examples.
+  - The skill was verified against `site-conventions.md` and actual site files with 5 independent cross-checks confirming accuracy of layout mappings, category display logic, permalink patterns, asset path conventions, and sidebar navigation structure.
+  - All 4 deployed copies are byte-identical, confirming consistent deployment across Claude Code, Codex, and backup locations.
+  - No existing site files or subtask 001–003 outputs were modified.
+
+- **Commit**
+  - "update - codex - execute subtask 004_create-qyweb-skill" (commit 71ce8df)
+
+- **Next**
+  - Subtask 004 complete and passed review.
+  - All subtasks (001–004) are done. Project workflow is complete.
+  - The skill file is ready for use in future QiYuan's Web content operations.
