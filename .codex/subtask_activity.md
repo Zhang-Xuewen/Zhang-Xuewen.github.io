@@ -130,3 +130,94 @@
 - **Next**
   - Subtask 001 complete and passed review.
   - Proceed to subtask `002_validate-site-integrity` — Codex will validate all content files against the conventions reference and attempt a Jekyll build.
+
+---
+
+# 📋 Summary · 2026-03-09 00:30 · by QYFlow
+
+## 📌 Subtask Brief
+
+- **Subtask**: `002_validate-site-integrity` — Validate Site Content Integrity and Build Readiness
+- **Iteration**: 0 previous attempt(s)
+- **Objective**:
+  - Validate all content files in the Jekyll site for correct YAML front matter, consistent filename conventions, and layout reference integrity.
+  - Attempt a Jekyll build and document the results (errors vs. warnings).
+  - Produce a comprehensive validation report at `.codex/subtask/002_validate-site-integrity/validation-report.md` documenting any issues found with specific file paths.
+  - This subtask depends on subtask 001's `site-conventions.md` as the validation baseline.
+
+
+## 🧠 Claude
+
+- **Role**: Reviewer
+- **Decision**: PASS
+
+- **Summary**
+    1. Codex performed a thorough validation of all 14 content files across 5 collections (`_posts`: 8, `_blogs`: 1, `_figs`: 3, `_shots`: 1, `_vlogs`: 1), producing a well-structured 7-section validation report with 6 supporting evidence files.
+    2. Reviewer independently verified all findings using Python scripts and direct file inspection — all Codex claims are accurate with zero discrepancies:
+        - 14/14 files have valid YAML front matter (0 parse errors)
+        - All 14 files have all 4 required fields (layout, title, date, categories)
+        - 5 referenced layouts (post, blog, fig, shot, vlog) all exist in `_layouts/`
+        - 3 filename-date mismatches confirmed as warnings (not errors)
+    3. Two acceptance criteria are technically unmet but non-actionable:
+        (1) Jekyll build failed due to Bundler version mismatch — system Ruby 2.6 does not have Bundler 2.5.7 required by `Gemfile.lock`. This is an environment issue, not a content defect. Codex was forbidden from installing gems by the subtask constraints.
+        (2) Internal link spot check found only 2 qualifying links (both anchors in `_posts/2024-08-30-Paper-Deep-DeePC.md`), short of the 3-link minimum. The site content genuinely has very few internal cross-references.
+    4. A REVISE would not change either outcome — the environment constraint and content limitation are inherent, not execution failures. The validation report accurately documents both findings.
+
+- **Evidence / Criteria**
+    - `[x]` All content files have valid YAML front matter (no parse errors) — reviewer independently ran Python validation, confirmed 14/14 PASS
+    - `[x]` Every content file has required fields: layout, title, date, categories — reviewer confirmed all 14 files have all 4 fields
+    - `[x]` Layout values match actual layout files in `_layouts/` — reviewer listed 9 layouts, confirmed 5 referenced (post, blog, fig, shot, vlog) all exist, 0 missing references
+    - `[x]` Jekyll build attempted and documented — build failed due to Bundler 2.5.7 not installed on system Ruby (environment issue, not content defect; Codex was forbidden from installing gems)
+    - `[x]` Validation report lists issues with specific file paths and descriptions — report has 7 detailed sections covering front matter, filename conventions, layout integrity, build results, and internal links
+    - `[x]` No site files modified — git diff confirms only `.codex/` files changed in execution commit `f706cec`
+    - `[x]` All 7 output artifacts exist with substantive content (validation-report.md, frontmatter-validation.json, frontmatter-validation.txt, layout-integrity.json, jekyll-build.log, link-check.json, result.md)
+
+- **Commit**
+    - "update - codex - execute subtask 002_validate-site-integrity" (commit f706cec, already on main)
+
+- **Next**
+    - Subtask 002 passed review. Proceed to Codex execution of subtask `003_create-content-templates`.
+    - Codex should read `site-conventions.md` and `validation-report.md` as references, then create 5 collection-specific templates plus a quick-reference guide.
+    - `subtask-agents.md` for subtask 003 has been generated with detailed step-by-step instructions referencing exact conventions from the site audit.
+
+
+### 🚀 Codex (Executor)
+
+- **Actions Taken**:
+  - Completed mandatory Step 0 merge prerequisite: ran `git fetch origin` and `git merge origin/main --no-edit`, resolved conflicts for `README.md`, `_data/social.yml`, and `index.html` by accepting REMOTE versions (merge commit `8072bd8`).
+  - Enumerated all 14 content files across 5 collections using `rg --files`.
+  - Ran Python front matter validation over all `.md` files: checked YAML parseability, required fields (layout, title, date, categories), layout reference validity, date format, and filename-date consistency.
+  - Cross-referenced all layout values against `_layouts/*.html` files and identified 4 orphaned layouts (informational only).
+  - Attempted `bundle exec jekyll build` — captured fatal error (Bundler 2.5.7 version mismatch) in `jekyll-build.log`.
+  - Performed permalink/sidebar comparison and internal link spot check across all content files.
+  - Compiled all results into a structured validation report with 7 sections and 6 supporting evidence files.
+
+- **Why**:
+  - The validation step is required before creating content templates (subtask 003) to confirm that existing content patterns are consistent and that templates will be based on working conventions.
+  - The merge prerequisite was needed because local and remote branches had diverged (4 local workflow commits, 6 remote GitHub web edits).
+
+- **Changed Files**:
+  - `.codex/subtask/002_validate-site-integrity/validation-report.md` — created, 118-line validation report with 7 sections
+  - `.codex/subtask/002_validate-site-integrity/frontmatter-validation.json` — created, structured per-file validation results (14 entries)
+  - `.codex/subtask/002_validate-site-integrity/frontmatter-validation.txt` — created, human-readable validation output
+  - `.codex/subtask/002_validate-site-integrity/layout-integrity.json` — created, layout cross-reference data
+  - `.codex/subtask/002_validate-site-integrity/jekyll-build.log` — created, raw build output capture
+  - `.codex/subtask/002_validate-site-integrity/link-check.json` — created, permalink/sidebar and internal link check results
+  - `.codex/subtask/002_validate-site-integrity/output_manifest.json` — created, artifact manifest for reviewer
+  - `.codex/subtask/002_validate-site-integrity/result.md` — created, execution report with acceptance checks
+  - `.codex/state.json` — created, codex runtime state tracking
+  - `.codex/subtask/plan.json` — modified, updated subtask 002 status to "doing"
+
+- **Summary**
+  - Codex executed a comprehensive read-only validation of the entire Jekyll site, examining all 14 content files for YAML correctness, required field presence, layout reference integrity, filename conventions, and internal link validity.
+  - Key findings: zero YAML parse errors, zero missing required fields, zero missing layout references, 3 filename-date mismatches (warnings), 4 orphaned layouts (informational), build failure (Bundler environment mismatch), and `/vlogs/` permalink missing from sidebar navigation.
+  - The validation confirms that the site's content conventions are consistent and well-formed — the only issues are environmental (build tooling) and minor (filename-date mismatches, sparse internal links).
+  - No site files were modified. All outputs stayed within `.codex/subtask/002_validate-site-integrity/` (plus codex control files).
+
+- **Commit**
+  - "Merge remote-tracking branch 'origin/main'" (commit 8072bd8, merge prerequisite)
+  - "update - codex - execute subtask 002_validate-site-integrity" (commit f706cec)
+
+- **Next**
+  - Subtask 002 complete and passed review.
+  - Proceed to subtask `003_create-content-templates` — Codex will create 5 collection templates and a quick-reference guide based on verified conventions.
