@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "created_at": "2026-03-08T23:45:00+08:00",
+  "strategy": "decompose_then_stepwise",
+  "subtasks": [
+    {
+      "id": "001",
+      "slug": "audit-site-conventions",
+      "title": "Audit site structure and document conventions reference",
+      "status": "todo",
+      "depends_on": [],
+      "dir": ".codex/subtask/001_audit-site-conventions",
+      "acceptance": {
+        "artifact_quality": [
+          "Reference document covers all 5 content collections (_posts, _blogs, _figs, _shots, _vlogs) with accurate front matter field listings",
+          "Reference includes exact naming conventions (YYYY-MM-DD-Slug.md), category naming patterns (hyphen-separated), and layout assignments",
+          "Reference documents the site navigation structure, sidebar links, and page hierarchy accurately",
+          "Reference captures the inline HTML title styling convention (e.g., <span style='color:#e32724'>) used in post titles",
+          "Reference includes image asset path conventions for each collection (public/fig_post/, public/shots/, etc.)",
+          "All information in the reference is verified against actual site files — no fabricated or assumed details"
+        ],
+        "verification": "Cross-check at least 3 documented conventions against actual site files to confirm accuracy. Verify that front matter examples match real posts."
+      },
+      "artifacts": [
+        ".codex/subtask/001_audit-site-conventions/site-conventions.md"
+      ],
+      "order_reason": "Must document existing conventions before validating integrity or creating templates, so all downstream tasks have an accurate reference."
+    },
+    {
+      "id": "002",
+      "slug": "validate-site-integrity",
+      "title": "Validate site content integrity and build readiness",
+      "status": "todo",
+      "depends_on": ["001"],
+      "dir": ".codex/subtask/002_validate-site-integrity",
+      "acceptance": {
+        "artifact_quality": [
+          "All content files in _posts, _blogs, _figs, _shots, _vlogs have valid YAML front matter (no parse errors)",
+          "Every content file has required front matter fields: layout, title, date, categories",
+          "Layout values in front matter match actual layout files in _layouts/ (no orphaned references)",
+          "Jekyll build completes without fatal errors (warnings acceptable but documented)",
+          "Validation report lists any issues found with specific file paths and descriptions"
+        ],
+        "verification": "Run a YAML front matter validation script across all content files. Attempt a Jekyll build (bundle exec jekyll build) and capture output. Report includes pass/fail per file."
+      },
+      "artifacts": [
+        ".codex/subtask/002_validate-site-integrity/validation-report.md"
+      ],
+      "order_reason": "Depends on 001 for the conventions reference to know what 'valid' means. Must validate before creating templates to ensure templates are based on working patterns."
+    },
+    {
+      "id": "003",
+      "slug": "create-content-templates",
+      "title": "Create reusable content templates for each collection type",
+      "status": "todo",
+      "depends_on": ["001", "002"],
+      "dir": ".codex/subtask/003_create-content-templates",
+      "acceptance": {
+        "artifact_quality": [
+          "One template file per collection type: post, blog, fig, shot, vlog — each with correct layout, front matter fields, and placeholder content",
+          "Templates use the exact front matter field names, ordering, and formatting found in existing site content",
+          "Each template includes inline comments or placeholders guiding the user on what to fill in (title, date, categories, image paths)",
+          "Templates follow the YYYY-MM-DD-Slug.md naming convention with a clear naming instruction",
+          "A quick-reference guide accompanies the templates summarizing when to use each collection type"
+        ],
+        "verification": "Place a test post using one template into the appropriate collection folder and verify Jekyll builds without errors. Remove the test post after verification."
+      },
+      "artifacts": [
+        ".codex/subtask/003_create-content-templates/templates/post-template.md",
+        ".codex/subtask/003_create-content-templates/templates/blog-template.md",
+        ".codex/subtask/003_create-content-templates/templates/fig-template.md",
+        ".codex/subtask/003_create-content-templates/templates/shot-template.md",
+        ".codex/subtask/003_create-content-templates/templates/vlog-template.md",
+        ".codex/subtask/003_create-content-templates/templates/quick-reference.md"
+      ],
+      "order_reason": "Depends on both 001 (conventions) and 002 (validated patterns) to ensure templates are based on correct, working conventions."
+    }
+  ]
+}

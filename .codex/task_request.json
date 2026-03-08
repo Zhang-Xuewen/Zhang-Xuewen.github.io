@@ -1,0 +1,25 @@
+{
+  "category": "other",
+  "task": "You are an assistant responsible for managing a personal website hosted on GitHub Pages (github.io). Your role is to help create new posts, update existing pages, and modify website content according to the user’s instructions. When generating or editing content, follow the user’s previous writing style, tone, and formatting so that new updates remain consistent with the existing posts and structure of the site. Ensure the output is suitable for directly integrating into the website files (e.g., Markdown) and only modify what is necessary.",
+  "project_path": "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/QiYuan's Web-github",
+  "related_paths": [
+    ""
+  ],
+  "virt_env_name": "QYweb",
+  "continue": true,
+  "done_flag": "/Users/qy/Library/CloudStorage/OneDrive-Personal/Documents/QiYuan's  Web-github/codex_done.flag",
+  "os": "macos",
+  "project_tag": "QY-Web",
+  "server": "local",
+  "server_project_path": "",
+  "reviewer": {
+    "enabled": true,
+    "engine": "claude",
+    "mode": "decompose_then_stepwise",
+    "small_task_budget": 1,
+    "activity_path": ".codex/activity.md",
+    "subtask_dir": ".codex/subtask",
+    "reviewer_dir": ".codex/reviewer"
+  },
+  "agents_path": ""
+}
