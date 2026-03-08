@@ -17,6 +17,8 @@ I recently published a toolbox to reduce this manual work:
 
 [Reference-Collector on GitHub](https://github.com/Zhang-Xuewen/Reference-Collector)
 
+![Reference-Collector icon]({{ '/' | relative_url }}public/blog/Reference-Collector/icon.png)
+
 ---
 
 # I. What is Reference-Collector?
@@ -29,6 +31,8 @@ Reference-Collector is a pipeline that:
 - Exports a metadata table and a missing/failed report
 
 In short: it helps convert an online Scholar list into a structured local reference workspace.
+
+![Reference-Collector pipeline]({{ '/' | relative_url }}public/blog/Reference-Collector/abstract.png)
 
 ---
 
@@ -78,6 +82,10 @@ python main.py --from-xlsx /path/to/metadata.xlsx --workdir _results/from_sheet
 
 If Scholar asks for captcha, export `cookies.txt` from your browser session and pass it with `--cookies-file`.
 
+![Reference-Collector CLI screenshot]({{ '/' | relative_url }}public/blog/Reference-Collector/screenshot.png)
+
+![Reference-Collector UI screenshot]({{ '/' | relative_url }}public/blog/Reference-Collector/ui.png)
+
 ---
 
 # IV. What the outputs look like
@@ -88,6 +96,8 @@ The default outputs include:
 - `missing_or_failed.md` listing papers that could not be downloaded automatically
 
 This means you can finish automated collection first, then spend manual effort only on unresolved items.
+
+![Reference-Collector report example]({{ '/' | relative_url }}public/blog/Reference-Collector/report.png)
 
 ---
 
