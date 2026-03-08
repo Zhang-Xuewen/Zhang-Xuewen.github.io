@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/validation-report.md",
+      "type": "document",
+      "description": "Primary validation report covering front matter checks, filename conventions, layout integrity, build attempt, link spot checks, and recommendations.",
+      "verify_hint": "Read end-to-end and confirm each required section is present with concrete file-path evidence."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/frontmatter-validation.json",
+      "type": "data",
+      "description": "Structured per-file front matter validation results including status, issues, warnings, and summary counts.",
+      "verify_hint": "Open JSON and confirm all 14 collection markdown files are present with PASS/FAIL and issue details."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/frontmatter-validation.txt",
+      "type": "document",
+      "description": "Human-readable front matter validation output grouped by file.",
+      "verify_hint": "Read and cross-check warning lines against JSON output and report summary."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/layout-integrity.json",
+      "type": "data",
+      "description": "Layout cross-reference dataset: available layouts, referenced layouts, missing and orphaned layout lists.",
+      "verify_hint": "Confirm referenced layouts map to _layouts files and orphaned layouts are informational only."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/jekyll-build.log",
+      "type": "other",
+      "description": "Raw stderr/stdout capture from `bundle exec jekyll build` attempt.",
+      "verify_hint": "Inspect log to verify fatal failure reason and ensure report categorization matches log lines."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/link-check.json",
+      "type": "data",
+      "description": "Permalink/sidebar comparison and extracted internal-link spot-check records.",
+      "verify_hint": "Confirm static permalinks, sidebar links, and internal-link counts used in the report are accurate."
+    },
+    {
+      "path": ".codex/subtask/002_validate-site-integrity/result.md",
+      "type": "document",
+      "description": "Execution report with commands run, changed files, evidence, acceptance checks, blockers, and next steps.",
+      "verify_hint": "Review for completeness against subtask-agents mandatory result format and acceptance checklist."
+    }
+  ]
+}

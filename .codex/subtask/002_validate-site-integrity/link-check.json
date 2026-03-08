@@ -1,0 +1,50 @@
+{
+  "permalinks": {
+    "about.md": "/about/",
+    "publication.md": "/publication/",
+    "notes.html": "/notes/",
+    "gallery.html": "/gallery/",
+    "shots.html": "/shots/",
+    "Vlog.html": "/vlogs/"
+  },
+  "sidebar_links": [
+    "/",
+    "/about/",
+    "/blog/",
+    "/gallery/",
+    "/notes/",
+    "/publication/",
+    "/shots/"
+  ],
+  "permalink_missing_in_sidebar": [
+    "/vlogs/"
+  ],
+  "sidebar_extra_vs_static": [],
+  "internal_links_found": [
+    {
+      "file": "_posts/2024-08-30-Paper-Deep-DeePC.md",
+      "target": "#license",
+      "type": "markdown"
+    },
+    {
+      "file": "_posts/2024-08-30-Paper-Deep-DeePC.md",
+      "target": "#citation",
+      "type": "markdown"
+    }
+  ],
+  "internal_links_checked": [
+    {
+      "file": "_posts/2024-08-30-Paper-Deep-DeePC.md",
+      "target": "#license",
+      "type": "markdown",
+      "valid": true
+    },
+    {
+      "file": "_posts/2024-08-30-Paper-Deep-DeePC.md",
+      "target": "#citation",
+      "type": "markdown",
+      "valid": true
+    }
+  ],
+  "internal_links_count": 2
+}
