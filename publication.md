@@ -40,4 +40,9 @@ permalink: /publication/
 
 - **Xuewen Zhang**, M. Han, X. Yin. Data-driven linear predictive control of nonlinear processes based on reduced-order Koopman operator. *IEEE International Conference on Systems, Man, and Cybernetics*, 3565–3570, 2023. [PDF](https://doi.org/10.1109/SMC53992.2023.10393904)
 
+- **Xuewen Zhang**, K. W. Huang, D.-N. Vo, M. Han, B. Decardi-Nelson, X. Yin. Learning-enabled hybrid modeling and economic predictive control of carbon capture process for ship decarbonization. *ACM e-Energy*, 2024.
+
 - M. Yan, **Xuewen Zhang**, K. Zhang, Z. Li, X. Yin. Economic data-enabled predictive control using machine learning. *IFAC-PapersOnLine*, 59(6):25–30, 2025.
+
+
+- **Xuewen Zhang**, X. Chen, A. W.-K. Law, X. Yin. Data-based switched predictive control of pump operation for flood mitigation in connected inland and coastal water systems . *SIMR*, 2025.
