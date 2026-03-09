@@ -2,7 +2,7 @@
 layout: post
 title:  "<span style='color:#e32724'>Reference-Collector</span>: From Google Scholar List to Downloaded Papers"
 date:   2026-03-09
-categories: Reference-Collector My-toolbox
+categories: My-toolbox
 comments: true
 ---
 
