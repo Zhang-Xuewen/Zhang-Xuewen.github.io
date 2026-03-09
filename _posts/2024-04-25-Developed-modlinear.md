@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "<span style='color:#e32724'>modlinear</span>: Linearize Nonlinear Models with Numerical and Symbolic Methods"
+title:  "<span style='color:#e32724'>ModLinear</span>: Linearize Nonlinear Models with Numerical and Symbolic Methods"
 date:   2024-04-25
 categories: My-toolbox
 comments: true

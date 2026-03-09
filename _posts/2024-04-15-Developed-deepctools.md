@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "<span style='color:#e32724'>deepctools</span>: A Python Toolbox for Data-Enabled Predictive Control"
+title:  "<span style='color:#e32724'>DeePCTools</span>: A Python Toolbox for Data-Enabled Predictive Control"
 date:   2024-04-15
 categories: My-toolbox
 comments: true
