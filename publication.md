@@ -42,7 +42,10 @@ permalink: /publication/
 
 - **Xuewen Zhang**, K. W. Huang, D.-N. Vo, M. Han, B. Decardi-Nelson, X. Yin. Learning-enabled hybrid modeling and economic predictive control of carbon capture process for ship decarbonization. *ACM e-Energy*, 2024.
 
-- M. Yan, **Xuewen Zhang**, K. Zhang, Z. Li, X. Yin. Economic data-enabled predictive control using machine learning. *IFAC-PapersOnLine*, 59(6):25–30, 2025.
-
+- M. Yan, **Xuewen Zhang**, K. Zhang, Z. Li, X. Yin. Economic data-enabled predictive control using machine learning. *IFAC-PapersOnLine*, 59(6):25–30, 2025. [PDF](https://www.sciencedirect.com/science/article/pii/S2405896325004768)
 
 - **Xuewen Zhang**, X. Chen, A. W.-K. Law, X. Yin. Data-based switched predictive control of pump operation for flood mitigation in connected inland and coastal water systems . *SIMR*, 2025.
+
+- **Xuewen Zhang**, X. Yin. Online data-enabled predictive control using deep learning. *AIChE Annual Meeting*, 2025. [WEB](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2025/proceeding/paper/online-data-enabled-predictive)
+
+- **Xuewen Zhang**, X. Chen, M. Han, A. W.-K. Law, X. Yin. Hybrid modeling and predictive control for an open water system with varying parameters. *AIChE Annual Meeting*, 2025. [WEB](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2025/proceeding/paper/hybrid-modeling-and-predictive)
