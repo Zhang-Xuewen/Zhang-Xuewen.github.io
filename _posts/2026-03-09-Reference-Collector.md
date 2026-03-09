@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post
 title:  "Reference-Collector: From Google Scholar List to Downloaded Papers"
 date:   2026-03-09
 categories: Reference-Collector My-toolbox
