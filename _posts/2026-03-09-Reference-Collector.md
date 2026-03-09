@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reference-Collector: From Google Scholar List to Downloaded Papers"
+title:  "color:#e32724'>Reference-Collector</span>: From Google Scholar List to Downloaded Papers"
 date:   2026-03-09
 categories: Reference-Collector My-toolbox
 comments: true
@@ -109,3 +109,23 @@ This means you can finish automated collection first, then spend manual effort o
 If you are interested, check the project details and updates here:
 
 [https://github.com/Zhang-Xuewen/Reference-Collector](https://github.com/Zhang-Xuewen/Reference-Collector)
+
+
+
+## License
+
+The project is released under the APACHE license. See [LICENSE](https://github.com/QiYuan-Zhang/DeePCtools/blob/8dbc2458966214bf9885f4d622e20c3b840641e2/LICENSE) for details.
+
+Copyright 2026 Xuewen Zhang
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
