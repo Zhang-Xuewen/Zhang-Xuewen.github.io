@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Developed <span style='color:#e32724'>QYtool</span> toolbox"
+title:  "<span style='color:#e32724'>QYtool</span>: A Utility Package for Research Needs"
 date:   2024-08-29
 categories: My-toolbox
 comments: true
