@@ -2,7 +2,7 @@
 layout: shot
 title:  "Romance of the World"
 date:   2021-05-01
-categories: Daido-Moriyama
+categories: Daily-life
 comments: true
 ---
 

@@ -2,7 +2,7 @@
 layout: shot
 title:  "Strolling through Life"
 date:   2021-09-23
-categories: Daido-Moriyama
+categories: Daily-life
 comments: true
 ---
 

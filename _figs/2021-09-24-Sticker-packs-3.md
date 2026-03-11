@@ -2,7 +2,7 @@
 layout: fig
 title:  "Sticker-packs-3"
 date:   2021-09-24
-categories: Logo
+categories: Stickers
 comments: true
 ---
 
